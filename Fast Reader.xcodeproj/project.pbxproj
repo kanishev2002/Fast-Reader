@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		092CADA7229D5CC4003945B4 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092CADA6229D5CC4003945B4 /* Book.swift */; };
+		0998C10121DA23C9000FCAF9 /* FastReadingInterfaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0998C10021DA23C9000FCAF9 /* FastReadingInterfaceViewController.swift */; };
 		09BDBF3621B7E06300F09098 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BDBF3521B7E06300F09098 /* AppDelegate.swift */; };
 		09BDBF3B21B7E06300F09098 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09BDBF3921B7E06300F09098 /* Main.storyboard */; };
 		09BDBF3D21B7E06400F09098 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09BDBF3C21B7E06400F09098 /* Assets.xcassets */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		092CADA6229D5CC4003945B4 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		0998C10021DA23C9000FCAF9 /* FastReadingInterfaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastReadingInterfaceViewController.swift; sourceTree = "<group>"; };
 		09BDBF3221B7E06300F09098 /* Fast Reader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fast Reader.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		09BDBF3521B7E06300F09098 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09BDBF3A21B7E06300F09098 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -54,10 +58,12 @@
 		09BDBF3421B7E06300F09098 /* Fast Reader */ = {
 			isa = PBXGroup;
 			children = (
+				092CADA6229D5CC4003945B4 /* Book.swift */,
 				09DC3F8921D50DFC0057F922 /* FastReaderViewController.swift */,
 				09DC3F8621D50B130057F922 /* Supprorting files */,
 				09BDBF3921B7E06300F09098 /* Main.storyboard */,
 				09BDBF4121B7E06400F09098 /* Info.plist */,
+				0998C10021DA23C9000FCAF9 /* FastReadingInterfaceViewController.swift */,
 			);
 			path = "Fast Reader";
 			sourceTree = "<group>";
@@ -143,8 +149,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				092CADA7229D5CC4003945B4 /* Book.swift in Sources */,
 				09BDBF3621B7E06300F09098 /* AppDelegate.swift in Sources */,
 				09DC3F8A21D50DFC0057F922 /* FastReaderViewController.swift in Sources */,
+				0998C10121DA23C9000FCAF9 /* FastReadingInterfaceViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
