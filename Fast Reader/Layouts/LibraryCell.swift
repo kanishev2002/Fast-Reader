@@ -18,7 +18,10 @@ class LibraryCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        bookImage.translatesAutoresizingMaskIntoConstraints = false
+        bookImage.layer.masksToBounds = true
+        bookImage.layer.cornerRadius = bookImage.frame.height / 2.0
+        imageView?.isHidden = true
     }
     
     override func prepareForReuse() {

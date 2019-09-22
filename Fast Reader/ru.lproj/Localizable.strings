@@ -1,0 +1,63 @@
+/* Author placeholder */
+"Author's name" = "Имя автора";
+
+/* Reading speed chart name */
+"Average reading speed" = "Средняя скорость чтения";
+
+/* Cancel alert action */
+"Cancel" = "Отменить";
+
+/* editButtonTitle */
+"Disable editing" = "Отключить редактирование";
+
+/* editButtonTitle */
+"Enable editing" = "Включить редактирование";
+
+/* Localized message shown after end of text */
+"End of text" = "Конец текста";
+
+/* localized alert title */
+"Error" = "Ошибка";
+
+/* Bottom Button */
+"Fast Read it!" = "Fast Read it!";
+
+/* Alert message */
+"Input name and author of the book" = "Введите название книги и имя автора";
+
+/* default inputTextView text */
+"Input your text here..." = "Введите свой текст здесь...";
+
+/* Name of book placeholder */
+"Name of the book" = "Имя книги";
+
+/* Empty chart message */
+"Not enough information yet" = "Пока недостаточно информации";
+
+/* readTodayLabel text */
+"Read today: (todayStat.wordsCount)" = "Прочитано сегодня: (todayStat.wordsCount)";
+
+/* Percentage label */
+"Read: (Int((position/wordsCount)*100.0))%" = "Прочитано: (Int((position/wordsCount)*100.0))%";
+
+/* Percentage label */
+"Read: (Int((position/wordsCount)*100.0))% Remaining: (Int((wordsCount - position) / readingSpeed)) min" = ">Прочитано: (Int((position/wordsCount)*100.0))% Осталось: (Int((wordsCount - position) / readingSpeed)) мин";
+
+/* Save button title */
+"Save" = "Сохранить";
+
+/* Alert title */
+"Save as..." = "Сохранить как...";
+
+/* Unknown author */
+"Unknown author" = "Неизвестный автор";
+
+/* No comment provided by engineer. */
+"Unknown book" = "Неизвестная книга";
+
+/* Unknown name */
+"Unknown name" = "Неизвестное название";
+
+/* localized alert message */
+"You didn't input any text" = "Вы не ввели текст";
+

@@ -34,13 +34,17 @@ class SettingsViewController: UITableViewController {
     }
     
     @IBOutlet weak var fontSizeSlider: UISlider!
-
     
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        NotificationCenter.default.addObserver(self, selector: #selector(toggleLightMode), name: .darkModeDisabled, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(toggleDarkMode), name: .darkModeEnabled, object: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        NotificationCenter.default.addObserver(self, selector: #selector(toggleLightMode), name: .darkModeDisabled, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(toggleDarkMode), name: .darkModeEnabled, object: nil)
+        
         let name = UIDevice.current.name
         
         
@@ -78,34 +82,6 @@ class SettingsViewController: UITableViewController {
         
         readingSpeedLabel.text = String(Int(readingSpeedSlider.value.rounded()))
         fontSizeLabel.text = String(Int(fontSizeSlider.value.rounded()))
-    }
-    
-    @objc func toggleLightMode() {
-        tableView.backgroundColor = .white
-        navigationController?.navigationBar.barTintColor = .white
-        tabBarController?.tabBar.barTintColor = .white
-        tabBarController?.tabBar.tintColor = .blue
-        colorOfCells = .white
-        fontSizeLabel.textColor = .black
-        readingSpeedLabel.textColor = .black
-        for label in labels {
-            label.textColor = .black
-        }
-        tableView.reloadData()
-    }
-    
-    @objc func toggleDarkMode() {
-        tableView.backgroundColor = .black
-        navigationController?.navigationBar.barTintColor = .black
-        tabBarController?.tabBar.barTintColor = .black
-        tabBarController?.tabBar.tintColor = .white
-        colorOfCells = .black
-        fontSizeLabel.textColor = .white
-        readingSpeedLabel.textColor = .white
-        for label in labels {
-            label.textColor = .white
-        }
-        tableView.reloadData()
     }
     
     
@@ -148,4 +124,42 @@ class SettingsViewController: UITableViewController {
         }
     }
 
+}
+
+
+extension SettingsViewController: DarkModeApplicable {
+    func toggleLightMode() {
+        view.backgroundColor = .white
+        tableView.backgroundColor = .white
+        navigationController?.navigationBar.barTintColor = .white
+        navigationController?.navigationBar.tintColor = UIButton(type: .system).tintColor
+        tabBarController?.tabBar.barTintColor = .white
+        tabBarController?.tabBar.tintColor = UIButton(type: .system).tintColor
+        colorOfCells = .white
+        fontSizeLabel.textColor = .black
+        readingSpeedLabel.textColor = .black
+        for label in labels {
+            label.textColor = .black
+        }
+        tableView.reloadData()
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.black]
+    }
+    
+    func toggleDarkMode() {
+        let tintColor = #colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1)
+        view.backgroundColor = .black
+        tableView.backgroundColor = .black
+        navigationController?.navigationBar.barTintColor = .black
+        navigationController?.navigationBar.tintColor = tintColor
+        tabBarController?.tabBar.barTintColor = .black
+        tabBarController?.tabBar.tintColor = tintColor
+        colorOfCells = .black
+        fontSizeLabel.textColor = .white
+        readingSpeedLabel.textColor = .white
+        for label in labels {
+            label.textColor = .white
+        }
+        tableView.reloadData()
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.white]
+    }
 }

@@ -1,0 +1,132 @@
+/* Class = "UILabel"; text = "Dark"; ObjectID = "0w0-Vo-SjY"; */
+"0w0-Vo-SjY.text" = "Тёмная";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "2tF-cK-qsr"; */
+"2tF-cK-qsr.text" = "Label";
+
+/* Class = "UILabel"; text = "English"; ObjectID = "2xX-p9-PMx"; */
+"2xX-p9-PMx.text" = "English";
+
+/* Class = "UINavigationController"; title = "Fastreading"; ObjectID = "4hj-cY-0cH"; */
+"4hj-cY-0cH.title" = "Скорочтение";
+
+/* Class = "UITextField"; text = "War and Peace"; ObjectID = "4Rc-yq-7oU"; */
+"4Rc-yq-7oU.text" = "Война и мир";
+
+/* Class = "UILabel"; text = "Read: remaining:"; ObjectID = "5eW-HZ-vGZ"; */
+"5eW-HZ-vGZ.text" = "Прочитано: Осталось";
+
+/* Class = "UILabel"; text = "Language"; ObjectID = "5zJ-Vr-qdG"; */
+"5zJ-Vr-qdG.text" = "Язык";
+
+/* Class = "UILabel"; text = "Read: "; ObjectID = "8wH-sC-eC3"; */
+"8wH-sC-eC3.text" = "Прочитано: ";
+
+/* Class = "UILabel"; text = "Light"; ObjectID = "9zO-lm-bL1"; */
+"9zO-lm-bL1.text" = "Светлая";
+
+/* Class = "UILabel"; text = "Theme"; ObjectID = "68n-kC-THH"; */
+"68n-kC-THH.text" = "Тема";
+
+/* Class = "UIButton"; normalTitle = "Read again"; ObjectID = "aPt-YN-lw6"; */
+"aPt-YN-lw6.normalTitle" = "Читать снова";
+
+/* Class = "UITableViewController"; title = "Settings"; ObjectID = "Avo-Xt-xCn"; */
+"Avo-Xt-xCn.title" = "Настройки";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Bi2-aP-Y8g"; */
+"Bi2-aP-Y8g.text" = "Label";
+
+/* Class = "UITabBarItem"; title = "Settings"; ObjectID = "bp2-bM-vfj"; */
+"bp2-bM-vfj.title" = "Настройки";
+
+/* Class = "UITextView"; text = "Input your text here..."; ObjectID = "e4d-Wq-nnT"; */
+"e4d-Wq-nnT.text" = "Введите свой текст здесь...";
+
+/* Class = "UIButton"; normalTitle = "Fast Read it!"; ObjectID = "E8l-i7-VPX"; */
+"E8l-i7-VPX.normalTitle" = "Fast Read it!";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "eQ3-u4-XIh"; */
+"eQ3-u4-XIh.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+
+/* Class = "UITabBarItem"; title = "Text input"; ObjectID = "eQg-S2-V6J"; */
+"eQg-S2-V6J.title" = "Ввод текста";
+
+/* Class = "UIButton"; normalTitle = "Fast Read it!"; ObjectID = "fHN-zK-7kx"; */
+"fHN-zK-7kx.normalTitle" = "Fast Read it!";
+
+/* Class = "UILabel"; text = "Font"; ObjectID = "Fj6-GE-g4a"; */
+"Fj6-GE-g4a.text" = "Шрифт";
+
+/* Class = "UILabel"; text = "Font size"; ObjectID = "Fq4-H4-gPw"; */
+"Fq4-H4-gPw.text" = "Размер шрифта";
+
+/* Class = "UITableViewSection"; headerTitle = "Themes"; ObjectID = "gsh-HP-PFZ"; */
+"gsh-HP-PFZ.headerTitle" = "Тема";
+
+/* Class = "UIButton"; normalTitle = "Add image"; ObjectID = "HSB-cW-Qnv"; */
+"HSB-cW-Qnv.normalTitle" = "Добавить изображение";
+
+/* Class = "UINavigationItem"; title = "Library"; ObjectID = "hu7-5h-7t8"; */
+"hu7-5h-7t8.title" = "Библиотека";
+
+/* Class = "UINavigationItem"; title = "Text input"; ObjectID = "jap-UC-Sxa"; */
+"jap-UC-Sxa.title" = "Ввод текста";
+
+/* Class = "UIBarButtonItem"; title = "––"; ObjectID = "KlO-Ap-uwu"; */
+"KlO-Ap-uwu.title" = "––";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "kmN-9F-GFX"; */
+"kmN-9F-GFX.text" = "Label";
+
+/* Class = "UIBarButtonItem"; title = "Enable editing"; ObjectID = "KSK-5A-dut"; */
+"KSK-5A-dut.title" = "Включить редактирование";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "KY1-3w-4dH"; */
+"KY1-3w-4dH.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "LTd-lz-Eu6"; */
+"LTd-lz-Eu6.text" = "Label";
+
+/* Class = "UILabel"; text = "Default reading speed"; ObjectID = "M2I-zV-g7F"; */
+"M2I-zV-g7F.text" = "Скорость чтения по-умолчанию";
+
+/* Class = "UILabel"; text = "Русский"; ObjectID = "MBc-9Z-4bx"; */
+"MBc-9Z-4bx.text" = "Русский";
+
+/* Class = "UILabel"; text = "Read today:"; ObjectID = "npi-Od-jji"; */
+"npi-Od-jji.text" = "Прочитано сегодня:";
+
+/* Class = "UITextField"; text = "Leo Tolstoy"; ObjectID = "Olv-8Q-uB8"; */
+"Olv-8Q-uB8.text" = "Лев Николаевич Толстой";
+
+/* Class = "UITabBarItem"; title = "Library"; ObjectID = "pmD-tO-93Q"; */
+"pmD-tO-93Q.title" = "Библиотека";
+
+/* Class = "UITableViewController"; title = "Language picker"; ObjectID = "QgA-Zl-TcJ"; */
+"QgA-Zl-TcJ.title" = "Выбор языка";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "R4o-qQ-cbX"; */
+"R4o-qQ-cbX.text" = "Label";
+
+/* Class = "UITabBarItem"; title = "My profile"; ObjectID = "RbN-9J-9zb"; */
+"RbN-9J-9zb.title" = "Мой профиль";
+
+/* Class = "UIButton"; normalTitle = "Read last 15 words"; ObjectID = "TMw-cD-SAm"; */
+"TMw-cD-SAm.normalTitle" = "Поледние 15 слов";
+
+/* Class = "UIViewController"; title = "Fastreading"; ObjectID = "tQL-c3-Tql"; */
+"tQL-c3-Tql.title" = "Скорочтение";
+
+/* Class = "UITableViewController"; title = "Theme picker"; ObjectID = "woT-Jx-Asa"; */
+"woT-Jx-Asa.title" = "Выбор темы";
+
+/* Class = "UINavigationItem"; title = "Settings"; ObjectID = "Wyf-fa-Puy"; */
+"Wyf-fa-Puy.title" = "Настройки";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "XdN-8K-Xyv"; */
+"XdN-8K-Xyv.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Yuv-UM-ftb"; */
+"Yuv-UM-ftb.text" = "Label";
+
