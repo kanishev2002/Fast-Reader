@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+  <file original="Fast Reader/Base.lproj/Main.storyboard" source-language="en" target-language="en" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="10.3" build-num="10G8"/>
+    </header>
+    <body>
+      <trans-unit id="0hJ-y0-vIh.title">
+        <source>Font picker</source>
+        <target>Font picker</target>
+        <note>Class = "UITableViewController"; title = "Font picker"; ObjectID = "0hJ-y0-vIh";</note>
+      </trans-unit>
+      <trans-unit id="0w0-Vo-SjY.text">
+        <source>Dark</source>
+        <target>Dark</target>
+        <note>Class = "UILabel"; text = "Dark"; ObjectID = "0w0-Vo-SjY";</note>
+      </trans-unit>
+      <trans-unit id="2tF-cK-qsr.text">
+        <source>Label</source>
+        <target>Label</target>
+        <note>Class = "UILabel"; text = "Label"; ObjectID = "2tF-cK-qsr";</note>
+      </trans-unit>
+      <trans-unit id="2xX-p9-PMx.text">
+        <source>English</source>
+        <target>English</target>
+        <note>Class = "UILabel"; text = "English"; ObjectID = "2xX-p9-PMx";</note>
+      </trans-unit>
+      <trans-unit id="4Rc-yq-7oU.text">
+        <source>War and Peace</source>
+        <target>War and Peace</target>
+        <note>Class = "UITextField"; text = "War and Peace"; ObjectID = "4Rc-yq-7oU";</note>
+      </trans-unit>
+      <trans-unit id="4hj-cY-0cH.title">
+        <source>Скорочтение</source>
+        <target>Скорочтение</target>
+        <note>Class = "UINavigationController"; title = "Скорочтение"; ObjectID = "4hj-cY-0cH";</note>
+      </trans-unit>
+      <trans-unit id="5eW-HZ-vGZ.text">
+        <source>Read: remaining:</source>
+        <target>Read: remaining:</target>
+        <note>Class = "UILabel"; text = "Read: remaining:"; ObjectID = "5eW-HZ-vGZ";</note>
+      </trans-unit>
+      <trans-unit id="5zJ-Vr-qdG.text">
+        <source>Language</source>
+        <target>Language</target>
+        <note>Class = "UILabel"; text = "Language"; ObjectID = "5zJ-Vr-qdG";</note>
+      </trans-unit>
+      <trans-unit id="8wH-sC-eC3.text">
+        <source>Read: </source>
+        <target>Read: </target>
+        <note>Class = "UILabel"; text = "Read: "; ObjectID = "8wH-sC-eC3";</note>
+      </trans-unit>
+      <trans-unit id="9zO-lm-bL1.text">
+        <source>Light</source>
+        <target>Light</target>
+        <note>Class = "UILabel"; text = "Light"; ObjectID = "9zO-lm-bL1";</note>
+      </trans-unit>
+      <trans-unit id="68n-kC-THH.text">
+        <source>Theme</source>
+        <target>Theme</target>
+        <note>Class = "UILabel"; text = "Theme"; ObjectID = "68n-kC-THH";</note>
+      </trans-unit>
+      <trans-unit id="Avo-Xt-xCn.title">
+        <source>Settings</source>
+        <target>Settings</target>
+        <note>Class = "UITableViewController"; title = "Settings"; ObjectID = "Avo-Xt-xCn";</note>
+      </trans-unit>
+      <trans-unit id="Bi2-aP-Y8g.text">
+        <source>Label</source>
+        <target>Label</target>
+        <note>Class = "UILabel"; text = "Label"; ObjectID = "Bi2-aP-Y8g";</note>
+      </trans-unit>
+      <trans-unit id="E8l-i7-VPX.normalTitle">
+        <source>Fast Read it!</source>
+        <target>Fast Read it!</target>
+        <note>Class = "UIButton"; normalTitle = "Fast Read it!"; ObjectID = "E8l-i7-VPX";</note>
+      </trans-unit>
+      <trans-unit id="Fj6-GE-g4a.text">
+        <source>Font</source>
+        <target>Font</target>
+        <note>Class = "UILabel"; text = "Font"; ObjectID = "Fj6-GE-g4a";</note>
+      </trans-unit>
+      <trans-unit id="Fq4-H4-gPw.text">
+        <source>Font size</source>
+        <target>Font size</target>
+        <note>Class = "UILabel"; text = "Font size"; ObjectID = "Fq4-H4-gPw";</note>
+      </trans-unit>
+      <trans-unit id="HSB-cW-Qnv.normalTitle">
+        <source>Add image</source>
+        <target>Add image</target>
+        <note>Class = "UIButton"; normalTitle = "Add image"; ObjectID = "HSB-cW-Qnv";</note>
+      </trans-unit>
+      <trans-unit id="KSK-5A-dut.title">
+        <source>Enable editing</source>
+        <target>Enable editing</target>
+        <note>Class = "UIBarButtonItem"; title = "Enable editing"; ObjectID = "KSK-5A-dut";</note>
+      </trans-unit>
+      <trans-unit id="KY1-3w-4dH.text">
+        <source>Label</source>
+        <target>Label</target>
+        <note>Class = "UILabel"; text = "Label"; ObjectID = "KY1-3w-4dH";</note>
+      </trans-unit>
+      <trans-unit id="KlO-Ap-uwu.title">
+        <source>––</source>
+        <target>––</target>
+        <note>Class = "UIBarButtonItem"; title = "––"; ObjectID = "KlO-Ap-uwu";</note>
+      </trans-unit>
+      <trans-unit id="LTd-lz-Eu6.text">
+        <source>Label</source>
+        <target>Label</target>
+        <note>Class = "UILabel"; text = "Label"; ObjectID = "LTd-lz-Eu6";</note>
+      </trans-unit>
+      <trans-unit id="M2I-zV-g7F.text">
+        <source>Default reading speed</source>
+        <target>Default reading speed</target>
+        <note>Class = "UILabel"; text = "Default reading speed"; ObjectID = "M2I-zV-g7F";</note>
+      </trans-unit>
+      <trans-unit id="MBc-9Z-4bx.text">
+        <source>Русский</source>
+        <target>Русский</target>
+        <note>Class = "UILabel"; text = "Русский"; ObjectID = "MBc-9Z-4bx";</note>
+      </trans-unit>
+      <trans-unit id="Olv-8Q-uB8.text">
+        <source>Leo Tolstoy</source>
+        <target>Leo Tolstoy</target>
+        <note>Class = "UITextField"; text = "Leo Tolstoy"; ObjectID = "Olv-8Q-uB8";</note>
+      </trans-unit>
+      <trans-unit id="QgA-Zl-TcJ.title">
+        <source>Language picker</source>
+        <target>Language picker</target>
+        <note>Class = "UITableViewController"; title = "Language picker"; ObjectID = "QgA-Zl-TcJ";</note>
+      </trans-unit>
+      <trans-unit id="R4o-qQ-cbX.text">
+        <source>Label</source>
+        <target>Label</target>
+        <note>Class = "UILabel"; text = "Label"; ObjectID = "R4o-qQ-cbX";</note>
+      </trans-unit>
+      <trans-unit id="RbN-9J-9zb.title">
+        <source>My profile</source>
+        <target>My profile</target>
+        <note>Class = "UITabBarItem"; title = "My profile"; ObjectID = "RbN-9J-9zb";</note>
+      </trans-unit>
+      <trans-unit id="TMw-cD-SAm.normalTitle">
+        <source>Read last 15 words</source>
+        <target>Read last 15 words</target>
+        <note>Class = "UIButton"; normalTitle = "Read last 15 words"; ObjectID = "TMw-cD-SAm";</note>
+      </trans-unit>
+      <trans-unit id="Wyf-fa-Puy.title">
+        <source>Settings</source>
+        <target>Settings</target>
+        <note>Class = "UINavigationItem"; title = "Settings"; ObjectID = "Wyf-fa-Puy";</note>
+      </trans-unit>
+      <trans-unit id="XdN-8K-Xyv.text">
+        <source>Label</source>
+        <target>Label</target>
+        <note>Class = "UILabel"; text = "Label"; ObjectID = "XdN-8K-Xyv";</note>
+      </trans-unit>
+      <trans-unit id="Yuv-UM-ftb.text">
+        <source>Label</source>
+        <target>Label</target>
+        <note>Class = "UILabel"; text = "Label"; ObjectID = "Yuv-UM-ftb";</note>
+      </trans-unit>
+      <trans-unit id="aPt-YN-lw6.normalTitle">
+        <source>Read again</source>
+        <target>Read again</target>
+        <note>Class = "UIButton"; normalTitle = "Read again"; ObjectID = "aPt-YN-lw6";</note>
+      </trans-unit>
+      <trans-unit id="bp2-bM-vfj.title">
+        <source>Settings</source>
+        <target>Settings</target>
+        <note>Class = "UITabBarItem"; title = "Settings"; ObjectID = "bp2-bM-vfj";</note>
+      </trans-unit>
+      <trans-unit id="e4d-Wq-nnT.text">
+        <source>Input your text here...</source>
+        <target>Input your text here...</target>
+        <note>Class = "UITextView"; text = "Input your text here..."; ObjectID = "e4d-Wq-nnT";</note>
+      </trans-unit>
+      <trans-unit id="eQ3-u4-XIh.text">
+        <source>Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</source>
+        <target>Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</target>
+        <note>Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "eQ3-u4-XIh";</note>
+      </trans-unit>
+      <trans-unit id="eQg-S2-V6J.title">
+        <source>Text input</source>
+        <target>Text input</target>
+        <note>Class = "UITabBarItem"; title = "Text input"; ObjectID = "eQg-S2-V6J";</note>
+      </trans-unit>
+      <trans-unit id="fHN-zK-7kx.normalTitle">
+        <source>Fast Read it!</source>
+        <target>Fast Read it!</target>
+        <note>Class = "UIButton"; normalTitle = "Fast Read it!"; ObjectID = "fHN-zK-7kx";</note>
+      </trans-unit>
+      <trans-unit id="gsh-HP-PFZ.headerTitle">
+        <source>Themes</source>
+        <target>Themes</target>
+        <note>Class = "UITableViewSection"; headerTitle = "Themes"; ObjectID = "gsh-HP-PFZ";</note>
+      </trans-unit>
+      <trans-unit id="hu7-5h-7t8.title">
+        <source>Library</source>
+        <target>Library</target>
+        <note>Class = "UINavigationItem"; title = "Library"; ObjectID = "hu7-5h-7t8";</note>
+      </trans-unit>
+      <trans-unit id="jap-UC-Sxa.title">
+        <source>Text input</source>
+        <target>Text input</target>
+        <note>Class = "UINavigationItem"; title = "Text input"; ObjectID = "jap-UC-Sxa";</note>
+      </trans-unit>
+      <trans-unit id="kmN-9F-GFX.text">
+        <source>Label</source>
+        <target>Label</target>
+        <note>Class = "UILabel"; text = "Label"; ObjectID = "kmN-9F-GFX";</note>
+      </trans-unit>
+      <trans-unit id="npi-Od-jji.text">
+        <source>Read today:</source>
+        <target>Read today:</target>
+        <note>Class = "UILabel"; text = "Read today:"; ObjectID = "npi-Od-jji";</note>
+      </trans-unit>
+      <trans-unit id="pmD-tO-93Q.title">
+        <source>Library</source>
+        <target>Library</target>
+        <note>Class = "UITabBarItem"; title = "Library"; ObjectID = "pmD-tO-93Q";</note>
+      </trans-unit>
+      <trans-unit id="tQL-c3-Tql.title">
+        <source>Fastreading</source>
+        <target>Fastreading</target>
+        <note>Class = "UIViewController"; title = "Fastreading"; ObjectID = "tQL-c3-Tql";</note>
+      </trans-unit>
+      <trans-unit id="woT-Jx-Asa.title">
+        <source>Theme picker</source>
+        <target>Theme picker</target>
+        <note>Class = "UITableViewController"; title = "Theme picker"; ObjectID = "woT-Jx-Asa";</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="Fast Reader/en.lproj/InfoPlist.strings" source-language="en" target-language="en" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="10.3" build-num="10G8"/>
+    </header>
+    <body>
+      <trans-unit id="CFBundleName">
+        <source>Fast Reader</source>
+        <target>Fast Reader</target>
+        <note>Bundle name</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="Fast Reader/en.lproj/Localizable.strings" source-language="en" target-language="en" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="10.3" build-num="10G8"/>
+    </header>
+    <body>
+      <trans-unit id="Author's name">
+        <source>Author's name</source>
+        <target>Author's name</target>
+        <note>Author placeholder</note>
+      </trans-unit>
+      <trans-unit id="Average reading speed">
+        <source>Average reading speed</source>
+        <target>Average reading speed</target>
+        <note>Reading speed chart name</note>
+      </trans-unit>
+      <trans-unit id="Cancel">
+        <source>Cancel</source>
+        <target>Cancel</target>
+        <note>Cancel alert action</note>
+      </trans-unit>
+      <trans-unit id="Disable editing">
+        <source>Disable editing</source>
+        <target>Disable editing</target>
+        <note>editButtonTitle</note>
+      </trans-unit>
+      <trans-unit id="Enable editing">
+        <source>Enable editing</source>
+        <target>Enable editing</target>
+        <note>editButtonTitle</note>
+      </trans-unit>
+      <trans-unit id="End of text">
+        <source>End of text</source>
+        <target>End of text</target>
+        <note>Localized message shown after end of text</note>
+      </trans-unit>
+      <trans-unit id="Error">
+        <source>Error</source>
+        <target>Error</target>
+        <note>localized alert title</note>
+      </trans-unit>
+      <trans-unit id="Fast Read it!">
+        <source>Fast Read it!</source>
+        <target>Fast Read it!</target>
+        <note>Bottom Button</note>
+      </trans-unit>
+      <trans-unit id="Input name and author of the book">
+        <source>Input name and author of the book</source>
+        <target>Input name and author of the book</target>
+        <note>Alert message</note>
+      </trans-unit>
+      <trans-unit id="Input your text here...">
+        <source>Input your text here...</source>
+        <target>Input your text here...</target>
+        <note>default inputTextView text</note>
+      </trans-unit>
+      <trans-unit id="Name of the book">
+        <source>Name of the book</source>
+        <target>Name of the book</target>
+        <note>Name of book placeholder</note>
+      </trans-unit>
+      <trans-unit id="Not enough information yet">
+        <source>Not enough information yet</source>
+        <target>Not enough information yet</target>
+        <note>Empty chart message</note>
+      </trans-unit>
+      <trans-unit id="Read today: (todayStat.wordsCount)">
+        <source>Read today: (todayStat.wordsCount)</source>
+        <target>Read today: (todayStat.wordsCount)</target>
+        <note>readTodayLabel text</note>
+      </trans-unit>
+      <trans-unit id="Read: (Int((position/wordsCount)*100.0))%">
+        <source>Read: (Int((position/wordsCount)*100.0))%</source>
+        <target>Read: (Int((position/wordsCount)*100.0))%</target>
+        <note>Percentage label</note>
+      </trans-unit>
+      <trans-unit id="Read: (Int((position/wordsCount)*100.0))% Remaining: (Int((wordsCount - position) / readingSpeed)) min">
+        <source>Read: (Int((position/wordsCount)*100.0))% Remaining: (Int((wordsCount - position) / readingSpeed)) min</source>
+        <target>Read: (Int((position/wordsCount)*100.0))% Remaining: (Int((wordsCount - position) / readingSpeed)) min</target>
+        <note>Percentage label</note>
+      </trans-unit>
+      <trans-unit id="Save">
+        <source>Save</source>
+        <target>Save</target>
+        <note>Save button title</note>
+      </trans-unit>
+      <trans-unit id="Save as...">
+        <source>Save as...</source>
+        <target>Save as...</target>
+        <note>Alert title</note>
+      </trans-unit>
+      <trans-unit id="Unknown author">
+        <source>Unknown author</source>
+        <target>Unknown author</target>
+        <note>Unknown author</note>
+      </trans-unit>
+      <trans-unit id="Unknown book">
+        <source>Unknown book</source>
+        <target>Unknown book</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Unknown name">
+        <source>Unknown name</source>
+        <target>Unknown name</target>
+        <note>Unknown name</note>
+      </trans-unit>
+      <trans-unit id="You didn't input any text">
+        <source>You didn't input any text</source>
+        <target>You didn't input any text</target>
+        <note>localized alert message</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
