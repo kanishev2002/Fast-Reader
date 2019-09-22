@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+  <file original="Fast Reader/Base.lproj/Main.storyboard" source-language="en" target-language="en" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="10.3" build-num="10G8"/>
+    </header>
+    <body>
+      <trans-unit id="0hJ-y0-vIh.title">
+        <source>Выбор шрифта</source>
+        <target>Выбор шрифта</target>
+        <note>Class = "UITableViewController"; title = "Выбор шрифта"; ObjectID = "0hJ-y0-vIh";</note>
+      </trans-unit>
+      <trans-unit id="0w0-Vo-SjY.text">
+        <source>Тёмная</source>
+        <target>Тёмная</target>
+        <note>Class = "UILabel"; text = "Тёмная"; ObjectID = "0w0-Vo-SjY";</note>
+      </trans-unit>
+      <trans-unit id="4Rc-yq-7oU.text">
+        <source>Война и мир</source>
+        <target>Война и мир</target>
+        <note>Class = "UITextField"; text = "Война и мир"; ObjectID = "4Rc-yq-7oU";</note>
+      </trans-unit>
+      <trans-unit id="4hj-cY-0cH.title">
+        <source>Скорочтение</source>
+        <target>Скорочтение</target>
+        <note>Class = "UINavigationController"; title = "Скорочтение"; ObjectID = "4hj-cY-0cH";</note>
+      </trans-unit>
+      <trans-unit id="5zJ-Vr-qdG.text">
+        <source>Язык</source>
+        <target>Язык</target>
+        <note>Class = "UILabel"; text = "Язык"; ObjectID = "5zJ-Vr-qdG";</note>
+      </trans-unit>
+      <trans-unit id="9zO-lm-bL1.text">
+        <source>Светлая</source>
+        <target>Светлая</target>
+        <note>Class = "UILabel"; text = "Светлая"; ObjectID = "9zO-lm-bL1";</note>
+      </trans-unit>
+      <trans-unit id="68n-kC-THH.text">
+        <source>Тема</source>
+        <target>Тема</target>
+        <note>Class = "UILabel"; text = "Тема"; ObjectID = "68n-kC-THH";</note>
+      </trans-unit>
+      <trans-unit id="Avo-Xt-xCn.title">
+        <source>Настройки</source>
+        <target>Настройки</target>
+        <note>Class = "UITableViewController"; title = "Настройки"; ObjectID = "Avo-Xt-xCn";</note>
+      </trans-unit>
+      <trans-unit id="E8l-i7-VPX.normalTitle">
+        <source>Fast Read it!</source>
+        <target>Fast Read it!</target>
+        <note>Class = "UIButton"; normalTitle = "Fast Read it!"; ObjectID = "E8l-i7-VPX";</note>
+      </trans-unit>
+      <trans-unit id="Fj6-GE-g4a.text">
+        <source>Шрифт</source>
+        <target>Шрифт</target>
+        <note>Class = "UILabel"; text = "Шрифт"; ObjectID = "Fj6-GE-g4a";</note>
+      </trans-unit>
+      <trans-unit id="Fq4-H4-gPw.text">
+        <source>Размер шрифта</source>
+        <target>Размер шрифта</target>
+        <note>Class = "UILabel"; text = "Размер шрифта"; ObjectID = "Fq4-H4-gPw";</note>
+      </trans-unit>
+      <trans-unit id="HSB-cW-Qnv.normalTitle">
+        <source>Добавить изображение</source>
+        <target>Добавить изображение</target>
+        <note>Class = "UIButton"; normalTitle = "Добавить изображение"; ObjectID = "HSB-cW-Qnv";</note>
+      </trans-unit>
+      <trans-unit id="KSK-5A-dut.title">
+        <source>Включить редактирование</source>
+        <target>Включить редактирование</target>
+        <note>Class = "UIBarButtonItem"; title = "Включить редактирование"; ObjectID = "KSK-5A-dut";</note>
+      </trans-unit>
+      <trans-unit id="KY1-3w-4dH.text">
+        <source>Label</source>
+        <target>Label</target>
+        <note>Class = "UILabel"; text = "Label"; ObjectID = "KY1-3w-4dH";</note>
+      </trans-unit>
+      <trans-unit id="LTd-lz-Eu6.text">
+        <source>Label</source>
+        <target>Label</target>
+        <note>Class = "UILabel"; text = "Label"; ObjectID = "LTd-lz-Eu6";</note>
+      </trans-unit>
+      <trans-unit id="M2I-zV-g7F.text">
+        <source>Скорость чтения по-умолчанию</source>
+        <target>Скорость чтения по-умолчанию</target>
+        <note>Class = "UILabel"; text = "Скорость чтения по-умолчанию"; ObjectID = "M2I-zV-g7F";</note>
+      </trans-unit>
+      <trans-unit id="N88-MN-yt3.title">
+        <source>Скорочтение</source>
+        <target>Скорочтение</target>
+        <note>Class = "UIViewController"; title = "Скорочтение"; ObjectID = "N88-MN-yt3";</note>
+      </trans-unit>
+      <trans-unit id="Olv-8Q-uB8.text">
+        <source>Лев Николаевич Толстой</source>
+        <target>Лев Николаевич Толстой</target>
+        <note>Class = "UITextField"; text = "Лев Николаевич Толстой"; ObjectID = "Olv-8Q-uB8";</note>
+      </trans-unit>
+      <trans-unit id="R4o-qQ-cbX.text">
+        <source>Label</source>
+        <target>Label</target>
+        <note>Class = "UILabel"; text = "Label"; ObjectID = "R4o-qQ-cbX";</note>
+      </trans-unit>
+      <trans-unit id="VW4-Ky-T4O.title">
+        <source>––</source>
+        <target>––</target>
+        <note>Class = "UIBarButtonItem"; title = "––"; ObjectID = "VW4-Ky-T4O";</note>
+      </trans-unit>
+      <trans-unit id="Wyf-fa-Puy.title">
+        <source>Настройки</source>
+        <target>Настройки</target>
+        <note>Class = "UINavigationItem"; title = "Настройки"; ObjectID = "Wyf-fa-Puy";</note>
+      </trans-unit>
+      <trans-unit id="Yuv-UM-ftb.text">
+        <source>Label</source>
+        <target>Label</target>
+        <note>Class = "UILabel"; text = "Label"; ObjectID = "Yuv-UM-ftb";</note>
+      </trans-unit>
+      <trans-unit id="ZTV-ag-UpH.normalTitle">
+        <source>На 15 слов назад</source>
+        <target>На 15 слов назад</target>
+        <note>Class = "UIButton"; normalTitle = "На 15 слов назад"; ObjectID = "ZTV-ag-UpH";</note>
+      </trans-unit>
+      <trans-unit id="bcR-H3-9Pl.text">
+        <source>Label</source>
+        <target>Label</target>
+        <note>Class = "UILabel"; text = "Label"; ObjectID = "bcR-H3-9Pl";</note>
+      </trans-unit>
+      <trans-unit id="bp2-bM-vfj.title">
+        <source>Настройки</source>
+        <target>Настройки</target>
+        <note>Class = "UITabBarItem"; title = "Настройки"; ObjectID = "bp2-bM-vfj";</note>
+      </trans-unit>
+      <trans-unit id="e4d-Wq-nnT.text">
+        <source>Input your text here...</source>
+        <target>Input your text here...</target>
+        <note>Class = "UITextView"; text = "Input your text here..."; ObjectID = "e4d-Wq-nnT";</note>
+      </trans-unit>
+      <trans-unit id="eQ3-u4-XIh.text">
+        <source>Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</source>
+        <target>Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</target>
+        <note>Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "eQ3-u4-XIh";</note>
+      </trans-unit>
+      <trans-unit id="eQg-S2-V6J.title">
+        <source>Вставить текст</source>
+        <target>Вставить текст</target>
+        <note>Class = "UITabBarItem"; title = "Вставить текст"; ObjectID = "eQg-S2-V6J";</note>
+      </trans-unit>
+      <trans-unit id="fHN-zK-7kx.normalTitle">
+        <source>Fast Read it!</source>
+        <target>Fast Read it!</target>
+        <note>Class = "UIButton"; normalTitle = "Fast Read it!"; ObjectID = "fHN-zK-7kx";</note>
+      </trans-unit>
+      <trans-unit id="fba-6c-6He.normalTitle">
+        <source>Читать снова</source>
+        <target>Читать снова</target>
+        <note>Class = "UIButton"; normalTitle = "Читать снова"; ObjectID = "fba-6c-6He";</note>
+      </trans-unit>
+      <trans-unit id="gsh-HP-PFZ.headerTitle">
+        <source>Темы</source>
+        <target>Темы</target>
+        <note>Class = "UITableViewSection"; headerTitle = "Темы"; ObjectID = "gsh-HP-PFZ";</note>
+      </trans-unit>
+      <trans-unit id="hu7-5h-7t8.title">
+        <source>Библиотека</source>
+        <target>Библиотека</target>
+        <note>Class = "UINavigationItem"; title = "Библиотека"; ObjectID = "hu7-5h-7t8";</note>
+      </trans-unit>
+      <trans-unit id="jap-UC-Sxa.title">
+        <source>Ввод текста</source>
+        <target>Ввод текста</target>
+        <note>Class = "UINavigationItem"; title = "Ввод текста"; ObjectID = "jap-UC-Sxa";</note>
+      </trans-unit>
+      <trans-unit id="pmD-tO-93Q.title">
+        <source>Библиотека</source>
+        <target>Библиотека</target>
+        <note>Class = "UITabBarItem"; title = "Библиотека"; ObjectID = "pmD-tO-93Q";</note>
+      </trans-unit>
+      <trans-unit id="woT-Jx-Asa.title">
+        <source>Выбор темы</source>
+        <target>Выбор темы</target>
+        <note>Class = "UITableViewController"; title = "Выбор темы"; ObjectID = "woT-Jx-Asa";</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="Fast Reader/en.lproj/InfoPlist.strings" source-language="en" target-language="en" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="10.3" build-num="10G8"/>
+    </header>
+    <body>
+      <trans-unit id="CFBundleName">
+        <source>Fast Reader</source>
+        <target>Fast Reader</target>
+        <note>Bundle name</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="Fast Reader/en.lproj/Localizable.strings" source-language="en" target-language="en" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="10.3" build-num="10G8"/>
+    </header>
+    <body>
+      <trans-unit id="Disable editing">
+        <source>Disable editing</source>
+        <target>Disable editing</target>
+        <note>editButtonTitle</note>
+      </trans-unit>
+      <trans-unit id="Enable editing">
+        <source>Enable editing</source>
+        <target>Enable editing</target>
+        <note>editButtonTitle</note>
+      </trans-unit>
+      <trans-unit id="Fast Read it!">
+        <source>Fast Read it!</source>
+        <target>Fast Read it!</target>
+        <note>Bottom Button</note>
+      </trans-unit>
+      <trans-unit id="Input your text here...">
+        <source>Input your text here...</source>
+        <target>Input your text here...</target>
+        <note>default inputTextView text</note>
+      </trans-unit>
+      <trans-unit id="Unknown author">
+        <source>Unknown author</source>
+        <target>Unknown author</target>
+        <note>Unknown author</note>
+      </trans-unit>
+      <trans-unit id="Unknown book">
+        <source>Unknown book</source>
+        <target>Unknown book</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Unknown name">
+        <source>Unknown name</source>
+        <target>Unknown name</target>
+        <note>Unknown name</note>
+      </trans-unit>
+      <trans-unit id="Введите название и автора книги">
+        <source>Введите название и автора книги</source>
+        <target>Введите название и автора книги</target>
+        <note>Alert message</note>
+      </trans-unit>
+      <trans-unit id="Вы не ввели текст">
+        <source>Вы не ввели текст</source>
+        <target>Вы не ввели текст</target>
+        <note>localized alert message</note>
+      </trans-unit>
+      <trans-unit id="Имя автора">
+        <source>Имя автора</source>
+        <target>Имя автора</target>
+        <note>Author placeholder</note>
+      </trans-unit>
+      <trans-unit id="Конец текста">
+        <source>Конец текста</source>
+        <target>Конец текста</target>
+        <note>Localized message shown after end of text</note>
+      </trans-unit>
+      <trans-unit id="Название книги">
+        <source>Название книги</source>
+        <target>Название книги</target>
+        <note>Name of book placeholder</note>
+      </trans-unit>
+      <trans-unit id="Отмена">
+        <source>Отмена</source>
+        <target>Отмена</target>
+        <note>Cancel alert action</note>
+      </trans-unit>
+      <trans-unit id="Ошибка">
+        <source>Ошибка</source>
+        <target>Ошибка</target>
+        <note>localized alert title</note>
+      </trans-unit>
+      <trans-unit id="Сохранить как...">
+        <source>Сохранить как...</source>
+        <target>Сохранить как...</target>
+        <note>Alert title</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
