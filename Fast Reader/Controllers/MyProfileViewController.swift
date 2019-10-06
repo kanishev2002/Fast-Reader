@@ -56,12 +56,12 @@ class MyProfileViewController: UIViewController {
         barChart.noDataText = NSLocalizedString("Not enough information yet", comment: "Empty chart message")
         barChart.noDataFont = .systemFont(ofSize: 25.0)
         barChart.noDataTextColor = #colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1)
-        if let theme = defaults.string(forKey: "Theme"), theme == "Dark"{
+        /*if let theme = defaults.string(forKey: "Theme"), theme == "Dark"{
             toggleDarkMode()
         }
         else {
             toggleLightMode()
-        }
+        }*/
         print("Last exit day: \(defaults.integer(forKey: "lastExitDay"))")
         print("Last exit week: \(defaults.integer(forKey: "lastExitWeek"))")
         print("Current day: \(Calendar.current.component(.weekday, from: Date()))")

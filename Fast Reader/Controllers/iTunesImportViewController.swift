@@ -16,12 +16,12 @@ class iTunesImportViewController: UIViewController {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(toggleDarkMode), name: .darkModeEnabled, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(toggleLightMode), name: .darkModeDisabled, object: nil)
-        if let theme = UserDefaults.standard.string(forKey: "Theme"), theme == "Dark" {
+        /*if let theme = UserDefaults.standard.string(forKey: "Theme"), theme == "Dark" {
             toggleDarkMode()
         }
         else {
             toggleLightMode()
-        }
+        }*/
     }
 }
 

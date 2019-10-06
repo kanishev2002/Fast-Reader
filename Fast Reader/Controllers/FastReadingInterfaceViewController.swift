@@ -21,6 +21,8 @@ class FastReadingInterfaceViewController: UIViewController {
     @IBOutlet weak var readAgainButton: UIButton!
     @IBOutlet weak var last15WordsButton: UIButton!
     @IBOutlet weak var percentageLabel: UILabel!
+    @IBOutlet weak var readingSpeedStepper: UIStepper!
+    
     
     
     var savedBook: Book?
@@ -43,6 +45,7 @@ class FastReadingInterfaceViewController: UIViewController {
     private let dataController = DataController.shared
     private var wordsCount = 0
     private var totalTime = 0.0
+    //private var numberOfTimer = 0 // Debug
     
     
     
@@ -77,7 +80,13 @@ class FastReadingInterfaceViewController: UIViewController {
         toolbar.isHidden = false
     }
     
-    @IBAction func decreaseReadingSpeed(_ sender: UIBarButtonItem) {
+    
+    @IBAction func stepperValueChanged(_ sender: UIStepper) {
+        readingSpeed = sender.value
+        wpmCounter.text = String(Int(readingSpeed))
+    }
+    
+    /*@IBAction func decreaseReadingSpeed(_ sender: UIBarButtonItem) {
         readingSpeed = max(0, readingSpeed-10)
         wpmCounter.text = String(readingSpeed)
         if readingSpeed == 0
@@ -86,10 +95,15 @@ class FastReadingInterfaceViewController: UIViewController {
         }
         if isReading
         {
+            // print("Timer \(timer!.userInfo as! Int) invalidated")
+            //numberOfTimer+=1
             timer?.invalidate()
             timer = Timer.scheduledTimer(timeInterval: 1.0/(readingSpeed/60.0), target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
+            timer?.tolerance = 0
             timer?.fire()
+            // print("Timer \(timer!.userInfo as! Int) created")
         }
+        //print("Reading speed is \(readingSpeed)")
     }
     
     @IBAction func increaseReadingSpeed(_ sender: UIBarButtonItem) {
@@ -97,11 +111,16 @@ class FastReadingInterfaceViewController: UIViewController {
         wpmCounter.text = String(readingSpeed)
         if isReading
         {
+            // print("Timer \(timer!.userInfo as! Int) invalidated")
             timer?.invalidate()
+            //numberOfTimer+=1
             timer = Timer.scheduledTimer(timeInterval: 1.0/(readingSpeed/60.0), target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
+            timer?.tolerance = 0
             timer?.fire()
+            // // print("Timer \(timer!.userInfo as! Int) created")
         }
-    }
+        //print("Reading speed is \(readingSpeed)")
+    }*/
     
     @IBAction func rewindButtonTouched(_ sender: UIBarButtonItem) {
         position = max(position - 15, 0)
@@ -139,6 +158,8 @@ class FastReadingInterfaceViewController: UIViewController {
     func changeReadingState() {
         if isReading {
             isReading = false
+            // print("Timer \(timer!.userInfo as! Int) invalidated")
+            //numberOfTimer+=1
             timer?.invalidate()
             tmpTimer?.invalidate()
             endTime = Date().timeIntervalSinceReferenceDate
@@ -146,7 +167,7 @@ class FastReadingInterfaceViewController: UIViewController {
             currentStatEntry.readingTime += (endTime - startTime)
             totalTime += (endTime - startTime)
             var items = toolbar.items
-            items![5] = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.play, target: self, action: #selector(FastReadingInterfaceViewController.playButtonTouched(_:)))
+            items![3] = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.play, target: self, action: #selector(FastReadingInterfaceViewController.playButtonTouched(_:)))
             toolbar.setItems(items, animated: true)
             navigationController?.navigationBar.isHidden = false
             if savedBook != nil {
@@ -154,6 +175,7 @@ class FastReadingInterfaceViewController: UIViewController {
                 dataController.saveData()
             }
             percentageLabel.isHidden = false
+            readingSpeedStepper.isHidden = false
             configurePercentageLabel()
             /*if let book = savedBook {
                 let position = Double(book.position)
@@ -167,15 +189,20 @@ class FastReadingInterfaceViewController: UIViewController {
         else {
             isReading = true
             timer = Timer.scheduledTimer(timeInterval: 1.0/(readingSpeed/60.0), target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
+            //numberOfTimer+=1
+            // print("Timer \(timer!.userInfo as! Int) created")
+            print("Reading speed is \(readingSpeed)")
             var items = toolbar.items
-            items![5] = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.pause, target: self, action: #selector(FastReadingInterfaceViewController.playButtonTouched(_:)))
+            items![3] = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.pause, target: self, action: #selector(FastReadingInterfaceViewController.playButtonTouched(_:)))
             toolbar.setItems(items, animated: true)
             navigationController?.navigationBar.isHidden = true
             view.updateConstraints()
             view.setNeedsLayout()
+            timer?.tolerance = 0
             timer?.fire()
             startTime = Date().timeIntervalSinceReferenceDate
             percentageLabel.isHidden = true
+            readingSpeedStepper.isHidden = true
         }
     }
     
@@ -212,12 +239,12 @@ class FastReadingInterfaceViewController: UIViewController {
             navigationItem.rightBarButtonItem?.isEnabled = true
         }
         
-        if let theme = defaults.string(forKey: "Theme"), theme == "Dark" {
+        /*if let theme = defaults.string(forKey: "Theme"), theme == "Dark" {
             toggleDarkMode()
         }
         else {
             toggleLightMode()
-        }
+        }*/
         
         //toolBarConstraint.constant = -(tabBarController?.tabBar.bounds.height)! / 2.0
         //print("bounds height is \(toolBarConstraint.constant)")
@@ -234,7 +261,7 @@ class FastReadingInterfaceViewController: UIViewController {
         navigationController?.navigationBar.isHidden = true
         let saveButtonTitle = NSLocalizedString("Save", comment: "Save button title")
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: saveButtonTitle, style: .plain, target: self, action: #selector(saveButtonTouched))
-        if let lastExitTime = defaults.value(forKey: "lastExitTime") as? Date, defaults.integer(forKey: "lastExitDay") != 0, defaults.integer(forKey: "lastExitWeek") != 0{
+        if let lastExitTime = defaults.value(forKey: "lastExitTime") as? Date, defaults.integer(forKey: "lastExitDay") != 0, defaults.integer(forKey: "lastExitWeek") != 0 {
             let secondsInAnHour = 60.0 * 60.0
             let timeDifference = (Date().timeIntervalSince(lastExitTime) / secondsInAnHour) as Double
             print("timeDifference is \(timeDifference)")
@@ -278,17 +305,26 @@ class FastReadingInterfaceViewController: UIViewController {
         
         if let defaultReadingSpeed = defaults.value(forKey: "Default reading speed") as? Double {
             timer = Timer.scheduledTimer(timeInterval: 1.0/(defaultReadingSpeed/60.0), target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
+            //numberOfTimer+=1
+            // print("Timer \(timer!.userInfo as! Int) created")
             wpmCounter.text = String(defaultReadingSpeed)
+            readingSpeedStepper.value = defaultReadingSpeed
+            timer?.tolerance = 0
             timer?.fire()
             readingSpeed = defaultReadingSpeed
         }
         else {
             timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
+            //numberOfTimer+=1
+            // print("Timer \(timer!.userInfo as! Int) created")
             wpmCounter.text = String(readingSpeed)
+            readingSpeedStepper.value = readingSpeed
+            timer?.tolerance = 0
             timer?.fire()
         }
         startTime = Date.timeIntervalSinceReferenceDate
         percentageLabel.isHidden = true
+        readingSpeedStepper.isHidden = true
     }
     
     @objc func prepareForBackground() {
@@ -307,7 +343,7 @@ class FastReadingInterfaceViewController: UIViewController {
     
     @objc func fireTimer()
     {
-        //TODO: slow down when full stop
+        //print("Timer \(timer?.userInfo as? Int ?? -1) did fire")
         var text: [String] 
         
         if let savedText = self.text {
@@ -320,6 +356,7 @@ class FastReadingInterfaceViewController: UIViewController {
         
         if position >= text.count {
             isReading = false
+            // print("Timer \(timer!.userInfo as! Int) invalidated")
             timer?.invalidate()
             if startTime == 0.0 {
                 startTime = Date().timeIntervalSinceReferenceDate
@@ -329,6 +366,7 @@ class FastReadingInterfaceViewController: UIViewController {
             currentStatEntry.readingTime += (endTime - startTime)
             totalTime += (endTime - startTime)
             toolbar.isHidden = true
+            readingSpeedStepper.isHidden = true
             navigationController?.navigationBar.isHidden = false
             //tabBarController?.tabBar.isHidden = false
             let localizedEndOfText = NSLocalizedString("End of text", comment: "Localized message shown after end of text")
@@ -348,7 +386,10 @@ class FastReadingInterfaceViewController: UIViewController {
             let parts = getAttributedWord(text[position])
             if punctuationMarks.contains(parts[2].string.last ?? Character(" ")) {
                 tmpTimer = Timer(fireAt: Date().addingTimeInterval(0.6*1.0/(readingSpeed/60.0)), interval: 0.0, target: self, selector: #selector(fireTmpTimer(_:)), userInfo: nil, repeats: false)
+                // print("Timer \(timer!.userInfo as! Int) invalidated")
+                //numberOfTimer+=1
                 timer?.invalidate()
+                print("Timer has launched tmpTimer")
                 RunLoop.current.add(tmpTimer!, forMode: .default)
                 
             }
@@ -363,9 +404,12 @@ class FastReadingInterfaceViewController: UIViewController {
     }
     
     @objc func fireTmpTimer(_ timer: Timer) {
+        print("tmpTimer fired")
         timer.invalidate()
         self.timer = Timer.scheduledTimer(timeInterval: 1.0 / (readingSpeed/60.0), target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
-        timer.fire()
+        //numberOfTimer+=1
+        // print("Timer \(self.timer!.userInfo as! Int) created")
+        self.timer?.fire()
     }
     
     @objc func saveButtonTouched() {

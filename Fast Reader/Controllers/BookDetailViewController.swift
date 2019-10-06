@@ -39,7 +39,7 @@ class BookDetailViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if let book = book {
+        /*if let book = book {
             let position = Double(book.position)
             let wordsCount = Double(book.text!.count)
             let localizedPercentageLabel = NSLocalizedString("Read: \(Int((position/wordsCount)*100.0))%", comment: "Percentage label")
@@ -50,11 +50,12 @@ class BookDetailViewController: UIViewController {
         }
         else {
             toggleLightMode()
-        }
+        }*/
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
         textView.delegate = self
         nameTextField.delegate = self
         authorTextField.delegate = self

@@ -72,7 +72,7 @@ class LibraryViewController: UITableViewController {
         print(book.text!.count)
     }
     
-    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    /*override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let libraryCell = cell as! LibraryCell
         if colorOfCells == .white {
             libraryCell.authorLabel.textColor = .black
@@ -84,7 +84,7 @@ class LibraryViewController: UITableViewController {
             libraryCell.nameLabel.textColor = tintColor
         }
         libraryCell.backgroundColor = colorOfCells
-    }
+    }*/
     
     
     @objc func libraryShouldUpdate(_ notification: Notification?) {

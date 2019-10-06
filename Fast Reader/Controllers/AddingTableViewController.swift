@@ -16,14 +16,14 @@ class AddingTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        NotificationCenter.default.addObserver(self, selector: #selector(toggleDarkMode), name: .darkModeEnabled, object: nil)
+        /*NotificationCenter.default.addObserver(self, selector: #selector(toggleDarkMode), name: .darkModeEnabled, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(toggleLightMode), name: .darkModeDisabled, object: nil)
         if let theme = UserDefaults.standard.string(forKey: "Theme"), theme == "Dark" {
                 NotificationCenter.default.post(Notification(name: .darkModeEnabled))
         }
         else {
             NotificationCenter.default.post(Notification(name: .darkModeDisabled))
-        }
+        }*/
     }
 
     // MARK: - Table view data source
@@ -36,7 +36,7 @@ class AddingTableViewController: UITableViewController {
         return 3
     }
     
-    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    /*override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if colorOfCells == .white {
             cellLabels[indexPath.row].textColor = .black
         }
@@ -45,7 +45,7 @@ class AddingTableViewController: UITableViewController {
             cellLabels[indexPath.row].textColor = tintColor
         }
         cell.backgroundColor = colorOfCells
-    }
+    }*/
 
     /*
     // MARK: - Navigation

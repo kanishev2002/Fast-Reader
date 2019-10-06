@@ -48,7 +48,7 @@ class FastReaderViewController: UIViewController {
         inputTextView.text = localizedDefaultText
         let locallizedButton = NSLocalizedString("Fast Read it!", comment: "Bottom Button")
         readItButton.setTitle(locallizedButton, for: .normal)
-        if let theme = UserDefaults.standard.string(forKey: "Theme") {
+        /*if let theme = UserDefaults.standard.string(forKey: "Theme") {
             if theme == "Dark" {
                 view.backgroundColor = .black
                 inputTextView.textColor = .white
@@ -58,7 +58,7 @@ class FastReaderViewController: UIViewController {
         }
         else {
             NotificationCenter.default.post(Notification(name: .darkModeDisabled))
-        }
+        }*/
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -129,12 +129,12 @@ extension FastReaderViewController: UITextViewDelegate {
             inputTextView.text = ""
         }
         
-        if let theme = UserDefaults.standard.string(forKey: "Theme"), theme == "Dark"{
+        /*if let theme = UserDefaults.standard.string(forKey: "Theme"), theme == "Dark"{
             inputTextView.textColor = .white
         }
         else {
             inputTextView.textColor = .black
-        }
+        }*/
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
