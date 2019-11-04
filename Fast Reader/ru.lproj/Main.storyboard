@@ -348,7 +348,7 @@
                                 </connections>
                             </button>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jRa-iv-Gvv">
-                                <rect key="frame" x="0.0" y="769" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="764" width="414" height="49"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="fJX-gj-OWk"/>
                                     <barButtonItem systemItem="rewind" id="IIb-l0-ybX">
@@ -378,13 +378,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minimumValue="30" maximumValue="900" stepValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="Atl-I0-ryn">
-                                <rect key="frame" x="160" y="729" width="94" height="32"/>
+                                <rect key="frame" x="160" y="724" width="94" height="32"/>
                                 <connections>
                                     <action selector="stepperValueChanged:" destination="tQL-c3-Tql" eventType="valueChanged" id="bmj-LC-ysj"/>
                                 </connections>
                             </stepper>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XdN-8K-Xyv">
-                                <rect key="frame" x="182" y="695" width="50" height="26"/>
+                                <rect key="frame" x="182" y="690" width="50" height="26"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1239,6 +1239,101 @@
             </objects>
             <point key="canvasLocation" x="-5055.072463768116" y="634.82142857142856"/>
         </scene>
+        <!--Мой профиль-->
+        <scene sceneID="SJ9-sw-4ud">
+            <objects>
+                <viewController title="Мой профиль" id="mJZ-od-be2" customClass="MyProfileViewController" customModule="Fast_Reader" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3Cc-9F-hqb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="AMl-u1-RFT">
+                                <rect key="frame" x="20" y="470.5" width="359" height="169.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" text="Прочитано сегодня:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="609-Yl-TNx">
+                                        <rect key="frame" x="0.0" y="0.0" width="222" height="27.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="23"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Всего слов прочитано:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DqJ-og-t5a">
+                                        <rect key="frame" x="0.0" y="35.5" width="250" height="27.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="23"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Общее время чтения:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="epM-hR-RLU">
+                                        <rect key="frame" x="0.0" y="71" width="238" height="27.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="23"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="254" text="Максимальная скорость чтения:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LdQ-QX-CtP">
+                                        <rect key="frame" x="0.0" y="106.5" width="359" height="27.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="23"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="249" text="Экономия времени" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0mH-4l-PrU">
+                                        <rect key="frame" x="0.0" y="142" width="213.5" height="27.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="23"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Средняя скорость чтения" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aey-KY-gNH">
+                                <rect key="frame" x="20" y="49" width="394" height="27.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PJp-5z-eDL">
+                                <rect key="frame" x="20" y="86.5" width="374" height="374"/>
+                                <subviews>
+                                    <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="syp-o0-gsB" customClass="BarChartView" customModule="Charts">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="374"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="syp-o0-gsB" firstAttribute="top" secondItem="PJp-5z-eDL" secondAttribute="top" id="9fI-Ne-gLd"/>
+                                    <constraint firstItem="syp-o0-gsB" firstAttribute="leading" secondItem="PJp-5z-eDL" secondAttribute="leading" id="Lp8-IM-hCa"/>
+                                    <constraint firstAttribute="width" secondItem="PJp-5z-eDL" secondAttribute="height" multiplier="1:1" id="QcA-oa-885"/>
+                                    <constraint firstAttribute="bottom" secondItem="syp-o0-gsB" secondAttribute="bottom" id="Zyh-wg-XuZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="syp-o0-gsB" secondAttribute="trailing" id="kfo-Ff-w0B"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ral-6n-9cg" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="AMl-u1-RFT" secondAttribute="bottom" id="6OH-dA-AMp"/>
+                            <constraint firstItem="PJp-5z-eDL" firstAttribute="bottom" secondItem="AMl-u1-RFT" secondAttribute="top" constant="-10" id="BZH-Qz-8XL"/>
+                            <constraint firstItem="ral-6n-9cg" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="AMl-u1-RFT" secondAttribute="trailing" id="Q4l-Jc-zbh"/>
+                            <constraint firstItem="ral-6n-9cg" firstAttribute="trailing" secondItem="PJp-5z-eDL" secondAttribute="trailing" constant="20" id="Spg-70-soS"/>
+                            <constraint firstItem="AMl-u1-RFT" firstAttribute="leading" secondItem="ral-6n-9cg" secondAttribute="leading" constant="20" id="VtX-8j-Sao"/>
+                            <constraint firstItem="PJp-5z-eDL" firstAttribute="leading" secondItem="ral-6n-9cg" secondAttribute="leading" constant="20" id="dW5-RO-chI"/>
+                            <constraint firstItem="PJp-5z-eDL" firstAttribute="top" secondItem="Aey-KY-gNH" secondAttribute="bottom" constant="10" id="dnw-3l-mZX"/>
+                            <constraint firstItem="Aey-KY-gNH" firstAttribute="leading" secondItem="ral-6n-9cg" secondAttribute="leading" constant="20" id="eE7-fv-gWQ"/>
+                            <constraint firstItem="ral-6n-9cg" firstAttribute="trailing" secondItem="Aey-KY-gNH" secondAttribute="trailing" id="g83-ak-kTe"/>
+                            <constraint firstItem="Aey-KY-gNH" firstAttribute="top" secondItem="ral-6n-9cg" secondAttribute="top" constant="5" id="t7E-35-V47"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ral-6n-9cg"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="My profile" image="person" catalog="system" selectedImage="person" id="2DZ-Up-bx0"/>
+                    <connections>
+                        <outlet property="barChart" destination="syp-o0-gsB" id="MUs-nY-Wnt"/>
+                        <outlet property="maxReadingSpeedLabel" destination="LdQ-QX-CtP" id="fUx-2S-TSG"/>
+                        <outlet property="readTodayLabel" destination="609-Yl-TNx" id="Et4-Qd-OUH"/>
+                        <outlet property="timeEconomyLabel" destination="0mH-4l-PrU" id="tUE-0s-Uv6"/>
+                        <outlet property="timeOfReadingLabel" destination="epM-hR-RLU" id="aeV-1r-R18"/>
+                        <outlet property="wordsCountLabel" destination="DqJ-og-t5a" id="ueZ-h8-oIL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dZ0-Q1-LEh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1165" y="800"/>
+        </scene>
     </scenes>
     <resources>
         <image name="book.fill" width="17" height="15"/>
@@ -1246,6 +1341,7 @@
         <image name="gear" width="19" height="19"/>
         <image name="globe" width="17" height="17"/>
         <image name="keyboard" width="24" height="13"/>
+        <image name="person" catalog="system" width="64" height="58"/>
         <image name="person" width="15" height="16"/>
         <image name="square.and.arrow.down.fill" width="15" height="18"/>
     </resources>

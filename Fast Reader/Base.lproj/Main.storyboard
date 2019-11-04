@@ -348,7 +348,7 @@
                                 </connections>
                             </button>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jRa-iv-Gvv">
-                                <rect key="frame" x="0.0" y="764" width="414" height="49"/>
+                                <rect key="frame" x="0.0" y="769" width="414" height="44"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="fJX-gj-OWk"/>
                                     <barButtonItem systemItem="rewind" id="IIb-l0-ybX">
@@ -378,13 +378,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minimumValue="30" maximumValue="900" stepValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="Atl-I0-ryn">
-                                <rect key="frame" x="160" y="724" width="94" height="32"/>
+                                <rect key="frame" x="160" y="729" width="94" height="32"/>
                                 <connections>
                                     <action selector="stepperValueChanged:" destination="tQL-c3-Tql" eventType="valueChanged" id="bmj-LC-ysj"/>
                                 </connections>
                             </stepper>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XdN-8K-Xyv">
-                                <rect key="frame" x="182" y="690" width="50" height="26"/>
+                                <rect key="frame" x="182" y="695" width="50" height="26"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -454,7 +454,7 @@
                                             <attributedString key="attributedText">
                                                 <fragment content="Label">
                                                     <attributes>
-                                                        <font key="NSFont" size="21" name=".AppleSystemUIFont"/>
+                                                        <font key="NSFont" metaFont="system" size="21"/>
                                                     </attributes>
                                                 </fragment>
                                             </attributedString>
@@ -688,24 +688,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XjI-j5-9Ju">
-                                <rect key="frame" x="20" y="44" width="374" height="374"/>
-                                <subviews>
-                                    <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tUr-7a-Lzf" customClass="BarChartView" customModule="Charts">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="374"/>
-                                    </view>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="tUr-7a-Lzf" firstAttribute="leading" secondItem="XjI-j5-9Ju" secondAttribute="leading" id="DrO-Ae-HJQ"/>
-                                    <constraint firstAttribute="bottom" secondItem="tUr-7a-Lzf" secondAttribute="bottom" id="SH3-5r-79q"/>
-                                    <constraint firstItem="tUr-7a-Lzf" firstAttribute="top" secondItem="XjI-j5-9Ju" secondAttribute="top" id="WOv-oK-swk"/>
-                                    <constraint firstAttribute="trailing" secondItem="tUr-7a-Lzf" secondAttribute="trailing" id="cqB-hU-oAX"/>
-                                    <constraint firstAttribute="width" secondItem="XjI-j5-9Ju" secondAttribute="height" multiplier="1:1" id="kLj-by-GZe"/>
-                                </constraints>
-                            </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="BfQ-62-9tg">
-                                <rect key="frame" x="20" y="455" width="218.5" height="169.5"/>
+                                <rect key="frame" x="20" y="470.5" width="218.5" height="169.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" text="Read today:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="npi-Od-jji">
                                         <rect key="frame" x="0.0" y="0.0" width="125" height="27.5"/>
@@ -739,20 +723,45 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Average reading speed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WHm-Sc-681">
+                                <rect key="frame" x="20" y="49" width="394" height="27.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XjI-j5-9Ju">
+                                <rect key="frame" x="20" y="86.5" width="374" height="374"/>
+                                <subviews>
+                                    <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tUr-7a-Lzf" customClass="BarChartView" customModule="Charts">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="374"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="tUr-7a-Lzf" firstAttribute="leading" secondItem="XjI-j5-9Ju" secondAttribute="leading" id="DrO-Ae-HJQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="tUr-7a-Lzf" secondAttribute="bottom" id="SH3-5r-79q"/>
+                                    <constraint firstItem="tUr-7a-Lzf" firstAttribute="top" secondItem="XjI-j5-9Ju" secondAttribute="top" id="WOv-oK-swk"/>
+                                    <constraint firstAttribute="trailing" secondItem="tUr-7a-Lzf" secondAttribute="trailing" id="cqB-hU-oAX"/>
+                                    <constraint firstAttribute="width" secondItem="XjI-j5-9Ju" secondAttribute="height" multiplier="1:1" id="kLj-by-GZe"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="WHm-Sc-681" firstAttribute="leading" secondItem="RzY-y0-XUy" secondAttribute="leading" constant="20" id="2hf-qg-hq7"/>
                             <constraint firstItem="RzY-y0-XUy" firstAttribute="trailing" secondItem="XjI-j5-9Ju" secondAttribute="trailing" constant="20" id="9qw-Uo-4pu"/>
-                            <constraint firstItem="XjI-j5-9Ju" firstAttribute="top" secondItem="RzY-y0-XUy" secondAttribute="top" id="TNx-kG-Aix"/>
                             <constraint firstItem="RzY-y0-XUy" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="BfQ-62-9tg" secondAttribute="trailing" id="XoE-Vv-Usl"/>
+                            <constraint firstItem="WHm-Sc-681" firstAttribute="top" secondItem="RzY-y0-XUy" secondAttribute="top" constant="5" id="cO5-DO-ECW"/>
                             <constraint firstItem="BfQ-62-9tg" firstAttribute="leading" secondItem="RzY-y0-XUy" secondAttribute="leading" constant="20" id="fHK-Ps-I1X"/>
                             <constraint firstItem="RzY-y0-XUy" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="BfQ-62-9tg" secondAttribute="bottom" id="gPJ-Df-KfX"/>
+                            <constraint firstItem="RzY-y0-XUy" firstAttribute="trailing" secondItem="WHm-Sc-681" secondAttribute="trailing" id="gi0-lm-Vdq"/>
                             <constraint firstItem="XjI-j5-9Ju" firstAttribute="leading" secondItem="RzY-y0-XUy" secondAttribute="leading" constant="20" id="oK6-fe-59V"/>
-                            <constraint firstItem="XjI-j5-9Ju" firstAttribute="bottom" secondItem="BfQ-62-9tg" secondAttribute="top" constant="-37" id="vrm-fg-KHk"/>
+                            <constraint firstItem="XjI-j5-9Ju" firstAttribute="top" secondItem="WHm-Sc-681" secondAttribute="bottom" constant="10" id="txo-tz-pgA"/>
+                            <constraint firstItem="XjI-j5-9Ju" firstAttribute="bottom" secondItem="BfQ-62-9tg" secondAttribute="top" constant="-10" id="vrm-fg-KHk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="RzY-y0-XUy"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="My profile" image="person" selectedImage="person" catalog="system" id="RbN-9J-9zb"/>
+                    <tabBarItem key="tabBarItem" title="My profile" image="person" catalog="system" selectedImage="person" id="RbN-9J-9zb"/>
                     <connections>
                         <outlet property="barChart" destination="tUr-7a-Lzf" id="Srr-EJ-9zp"/>
                         <outlet property="maxReadingSpeedLabel" destination="Dfe-oY-UZu" id="Ea0-kL-PLn"/>
@@ -1246,7 +1255,6 @@
         <image name="globe" width="17" height="17"/>
         <image name="keyboard" width="24" height="13"/>
         <image name="person" catalog="system" width="64" height="58"/>
-        <image name="person" width="15" height="16"/>
         <image name="square.and.arrow.down.fill" catalog="system" width="60" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
