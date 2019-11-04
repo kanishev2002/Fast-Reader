@@ -35,6 +35,16 @@ fileprivate let weekdays = [
     7 : Saturday
 ]
 
+fileprivate let colors: [String : UIColor] = [
+    Monday : .red,
+    Tuesday : .orange,
+    Wednesday : .yellow,
+    Thursday : .green,
+    Friday : .systemBlue,
+    Saturday : .blue,
+    Sunday : .purple
+]
+
 class MyProfileViewController: UIViewController {
     // MARK: - IBOutlets
     @IBOutlet weak var readTodayLabel: UILabel!
@@ -102,19 +112,12 @@ class MyProfileViewController: UIViewController {
         var datasets = [BarChartDataSet]()
         print(stats)
         datasets.reserveCapacity(7)
-        let chartDataColor: UIColor
-        if let theme = defaults.string(forKey: "Theme"), theme == "Dark" {
-            chartDataColor = #colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1)
-        }
-        else {
-            chartDataColor = .blue
-        }
         
         for (index, day) in stats.enumerated() {
             let newEntry = BarChartDataEntry(x: Double(index) + 1.0, y: day.averageSpeed)
             let weekday = Calendar.current.component(.weekday, from: Date(timeIntervalSinceReferenceDate: day.creationTime as TimeInterval))
             let chartDataSet = BarChartDataSet(entries: [newEntry], label: weekdays[weekday])
-            chartDataSet.setColors(chartDataColor)
+            chartDataSet.setColors(colors[weekdays[weekday] ?? Monday] ?? .blue)
             datasets.append(chartDataSet)
         }
         let chartData = BarChartData(dataSets: datasets)
