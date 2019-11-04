@@ -11,17 +11,16 @@ import UIKit
 import CoreData
 
 class DataController {
-    
+    // MARK: - Constants
     private let appDelegate = UIApplication.shared.delegate as! AppDelegate
     private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    //private var stats = [Double]()
-    //private var time = 0.0
-    //private var words = 0
     static let shared = DataController()
     var lastSavedBook: Book?
     
+    
     private init() {}
     
+    // MARK: - Managing books
     func getBook(named name: String) -> Book? {
         let request = Book.fetchRequest() as NSFetchRequest<Book>
         let predicate = NSPredicate(format: "name = %@", name)
@@ -59,12 +58,13 @@ class DataController {
         appDelegate.saveContext()
     }
     
-    func saveBook(named name: String, withText text: [String], by author: String, withPosition position: Int = 0) {
+    func saveBook(named name: String, withText text: String, by author: String, withPosition position: Int = 0) {
         let book = Book(entity: Book.entity(), insertInto: context)
         
         book.name = name
         book.author = author
-        book.text = text.filter{!$0.isEmpty && $0 != " "}
+        book.text = text
+        book.separatedText = text.components(separatedBy: .whitespacesAndNewlines).filter{!$0.isEmpty && $0 != " "}
         book.position = Int64(position)
         
         do {
@@ -79,6 +79,8 @@ class DataController {
     func deleteBook(_ book: Book){
         context.delete(book)
     }
+    
+    // MARK: - Managing statistics
     
     func getNewStatisticsEntry() -> StatisticsEntry {
         let stat = StatisticsEntry(entity: StatisticsEntry.entity(), insertInto: context)
@@ -142,62 +144,4 @@ class DataController {
             print("Error in deleteAllEntries")
         }
     }
-    
-    
-    /*func addStat(_ value: Double){
-        if stats.count >= 7 {
-            stats.remove(at: 0)
-        }
-        stats.append(value)
-        print("addStat")
-        print("Stats: \(stats)")
-        print("Words: \(words)\nTime: \(time)")
-        print("---------------")
-    }
-    
-    func addStat() {
-        if stats.count >= 7 {
-            stats.remove(at: 0)
-        }
-        stats.append(Double(words) / time)
-        print("addStat")
-        print("Stats: \(stats)")
-        print("Words: \(words)\nTime: \(time)")
-        print("---------------")
-        words = 0
-        time = 0
-    }
-    
-    func getStats() -> [Double]?{
-        if stats.count == 0 {
-            return nil
-        }
-        return stats
-        //return [120.0, 150.0, 130.0, 200.0, 200.0, 380.0, 300.0]
-    }
-    
-    func updateStats(){
-        if stats.count == 0 {
-            self.addStat()
-            print("updateStats")
-            print("Stats: \(stats)")
-            print("Words: \(words)\nTime: \(time)")
-            print("---------------")
-            return
-        }
-        stats[stats.count - 1] = Double(words) / time
-        print("updateStats")
-        print("Stats: \(stats)")
-        print("Words: \(words)\nTime: \(time)")
-        print("---------------")
-    }
-    
-    func saveDailyStats(totalTime: Double, words: Int){
-        self.time = totalTime
-        self.words = words
-        print("saveDailyStats")
-        print("Stats: \(stats)")
-        print("Words: \(words)\nTime: \(time)")
-        print("---------------")
-    }*/
 }

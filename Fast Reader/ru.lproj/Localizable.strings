@@ -1,10 +1,23 @@
+/* part 2 of timeEconomyLabel */
+" minutes" = " минут";
+
+/* part 2 of todayLabel */
+" words" = " слов";
+
+/* words per minute */
+" words/min" = " слов/мин";
+
+/* Alert message */
+"An error occured while fetching text from website. Please, try again." = "Возникла ошибка при получении текста с сайта. Пожалуйста, попробуйте еще раз.";
+
 /* Author placeholder */
 "Author's name" = "Имя автора";
 
 /* Reading speed chart name */
 "Average reading speed" = "Средняя скорость чтения";
 
-/* Cancel alert action */
+/* alert action button
+   Cancel alert action */
 "Cancel" = "Отменить";
 
 /* editButtonTitle */
@@ -16,11 +29,22 @@
 /* Localized message shown after end of text */
 "End of text" = "Конец текста";
 
-/* localized alert title */
+/* Alert title
+   alert title
+   localized alert title */
 "Error" = "Ошибка";
 
 /* Bottom Button */
 "Fast Read it!" = "Fast Read it!";
+
+/* Font size label */
+"Font size: " = "Размер шрифта: ";
+
+/* Friday */
+"Fri" = "Пт";
+
+/* alert action button */
+"Go" = "Перейти";
 
 /* Alert message */
 "Input name and author of the book" = "Введите название книги и имя автора";
@@ -28,20 +52,33 @@
 /* default inputTextView text */
 "Input your text here..." = "Введите свой текст здесь...";
 
+/* maxSpeedLabel text */
+"Max reading speed: " = "Максимальная скорость чтения: ";
+
+/* minutes */
+"min" = "минут";
+
+/* Monday */
+"Mon" = "Пн";
+
 /* Name of book placeholder */
-"Name of the book" = "Имя книги";
+"Name of the book" = "Название книги";
 
 /* Empty chart message */
 "Not enough information yet" = "Пока недостаточно информации";
 
 /* readTodayLabel text */
-"Read today: (todayStat.wordsCount)" = "Прочитано сегодня: (todayStat.wordsCount)";
+"Read today: " = "Прочитано сегодня: ";
 
-/* Percentage label */
-"Read: (Int((position/wordsCount)*100.0))%" = "Прочитано: (Int((position/wordsCount)*100.0))%";
+/* Percentage label
+   percentage label */
+"Read: " = "Прочитано: ";
 
-/* Percentage label */
-"Read: (Int((position/wordsCount)*100.0))% Remaining: (Int((wordsCount - position) / readingSpeed)) min" = ">Прочитано: (Int((position/wordsCount)*100.0))% Осталось: (Int((wordsCount - position) / readingSpeed)) мин";
+/* percentage label */
+"Remaining: " = "Осталось: ";
+
+/* Saturday */
+"Sat" = "Сб";
 
 /* Save button title */
 "Save" = "Сохранить";
@@ -49,14 +86,35 @@
 /* Alert title */
 "Save as..." = "Сохранить как...";
 
+/* Sunday */
+"Sun" = "Вс";
+
+/* Example text */
+"This is example text" = "Так будет выглядеть текст";
+
+/* Thursday */
+"Thu" = "Чт";
+
+/* timeEconomyLabel text */
+"Time economy: " = "Экономия времени: ";
+
+/* timeOfReadingLabel text */
+"Total time of reading: " = "Общее время чтения";
+
+/* wordsCountLabel text */
+"Total words count: " = "Общее количество слов: ";
+
+/* Tuesday */
+"Tue" = "ВТ";
+
 /* Unknown author */
 "Unknown author" = "Неизвестный автор";
 
 /* No comment provided by engineer. */
 "Unknown book" = "Неизвестная книга";
 
-/* Unknown name */
-"Unknown name" = "Неизвестное название";
+/* Wednesday */
+"Wed" = "Ср";
 
 /* localized alert message */
 "You didn't input any text" = "Вы не ввели текст";

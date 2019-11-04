@@ -1,23 +1,20 @@
+/* Class = "UITableViewController"; title = "Font picker"; ObjectID = "0hJ-y0-vIh"; */
+"0hJ-y0-vIh.title" = "Выбор шрифта";
+
+/* Class = "UILabel"; text = "Adjust the font"; ObjectID = "0Hn-d6-ktT"; */
+"0Hn-d6-ktT.text" = "Настройка шрифта";
+
 /* Class = "UILabel"; text = "Dark"; ObjectID = "0w0-Vo-SjY"; */
 "0w0-Vo-SjY.text" = "Тёмная";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "2tF-cK-qsr"; */
 "2tF-cK-qsr.text" = "Label";
 
-/* Class = "UILabel"; text = "English"; ObjectID = "2xX-p9-PMx"; */
-"2xX-p9-PMx.text" = "English";
-
-/* Class = "UINavigationController"; title = "Fastreading"; ObjectID = "4hj-cY-0cH"; */
-"4hj-cY-0cH.title" = "Скорочтение";
-
 /* Class = "UITextField"; text = "War and Peace"; ObjectID = "4Rc-yq-7oU"; */
 "4Rc-yq-7oU.text" = "Война и мир";
 
 /* Class = "UILabel"; text = "Read: remaining:"; ObjectID = "5eW-HZ-vGZ"; */
 "5eW-HZ-vGZ.text" = "Прочитано: Осталось";
-
-/* Class = "UILabel"; text = "Language"; ObjectID = "5zJ-Vr-qdG"; */
-"5zJ-Vr-qdG.text" = "Язык";
 
 /* Class = "UILabel"; text = "Read: "; ObjectID = "8wH-sC-eC3"; */
 "8wH-sC-eC3.text" = "Прочитано: ";
@@ -34,11 +31,29 @@
 /* Class = "UITableViewController"; title = "Settings"; ObjectID = "Avo-Xt-xCn"; */
 "Avo-Xt-xCn.title" = "Настройки";
 
+/* Class = "UILabel"; text = "Total words count:"; ObjectID = "b8F-yA-w4V"; */
+"b8F-yA-w4V.text" = "Общее количество слов:";
+
+/* Class = "UIViewController"; title = "iTunes import"; ObjectID = "B84-aY-uRB"; */
+"B84-aY-uRB.title" = "Импорт через iTunes";
+
 /* Class = "UILabel"; text = "Label"; ObjectID = "Bi2-aP-Y8g"; */
 "Bi2-aP-Y8g.text" = "Label";
 
 /* Class = "UITabBarItem"; title = "Settings"; ObjectID = "bp2-bM-vfj"; */
 "bp2-bM-vfj.title" = "Настройки";
+
+/* Class = "UITextView"; text = "To import from iTunes:  1. Connect your device to the computer 2. Open iTunes 3. Open your device page in iTunes 4. Go to common files and choose Fast Reader 5. Drag and drop your book to common files 6. Open Fast Reader on your phone 7. Go to your Library 8. Pull the list of books down to refresh  Fast Reader supports PDF, TXT, RTF file formats"; ObjectID = "d8p-dw-s6s"; */
+"d8p-dw-s6s.text" = "Чтобы импортировать через iTunes:\n        \n        1. Подключите свое устройство к компьютеру\n        2. Откройте iTunes\n        3. Откройте страницу своего устройства в iTunes\n        4. Перейдите в \"общие файлы\" и выберите Fast Reader\n        5. Перетяните книгу в \"общие файлы\"\n        6. Откройте Fast Reader на своем телефоне\n        7. Перейдите в библиотеку\n        8. Потяните список книг вниз для обновления\n        \n        Fast Reader поддерживает форматы PDF, TXT, RTF";
+
+/* Class = "UILabel"; text = "Choose theme"; ObjectID = "DAL-mQ-3GZ"; */
+"DAL-mQ-3GZ.text" = "Выберите тему";
+
+/* Class = "UILabel"; text = "Max reading speed:"; ObjectID = "Dfe-oY-UZu"; */
+"Dfe-oY-UZu.text" = "Максимальная скорость чтения";
+
+/* Class = "UILabel"; text = "Font size"; ObjectID = "dmp-W9-aLa"; */
+"dmp-W9-aLa.text" = "Размер шрифта";
 
 /* Class = "UITextView"; text = "Input your text here..."; ObjectID = "e4d-Wq-nnT"; */
 "e4d-Wq-nnT.text" = "Введите свой текст здесь...";
@@ -49,8 +64,14 @@
 /* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "eQ3-u4-XIh"; */
 "eQ3-u4-XIh.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
 
-/* Class = "UITabBarItem"; title = "Text input"; ObjectID = "eQg-S2-V6J"; */
-"eQg-S2-V6J.title" = "Ввод текста";
+/* Class = "UILabel"; text = "Total time of reading:"; ObjectID = "eVG-L6-K49"; */
+"eVG-L6-K49.text" = "Общее время чтения";
+
+/* Class = "UILabel"; text = "Import via iTunes"; ObjectID = "ez7-sf-olA"; */
+"ez7-sf-olA.text" = "Импортировать через iTunes";
+
+/* Class = "UIButton"; normalTitle = "Dark"; ObjectID = "Fgd-lo-l0e"; */
+"Fgd-lo-l0e.normalTitle" = "Тёмная";
 
 /* Class = "UIButton"; normalTitle = "Fast Read it!"; ObjectID = "fHN-zK-7kx"; */
 "fHN-zK-7kx.normalTitle" = "Fast Read it!";
@@ -61,6 +82,12 @@
 /* Class = "UILabel"; text = "Font size"; ObjectID = "Fq4-H4-gPw"; */
 "Fq4-H4-gPw.text" = "Размер шрифта";
 
+/* Class = "UITabBarItem"; title = "Book Adding"; ObjectID = "g4a-cb-DPA"; */
+"g4a-cb-DPA.title" = "Добавление книг";
+
+/* Class = "UITableViewSection"; footerTitle = "Theme choosing doesn't work on devices running iOS 13 and above as it is synchronized with systemwide theme."; ObjectID = "gsh-HP-PFZ"; */
+"gsh-HP-PFZ.footerTitle" = "Выбор тем не поддерживается на устройствах с iOS 13 и выше, так как тема синхронизирована с темой системы";
+
 /* Class = "UITableViewSection"; headerTitle = "Themes"; ObjectID = "gsh-HP-PFZ"; */
 "gsh-HP-PFZ.headerTitle" = "Тема";
 
@@ -70,11 +97,14 @@
 /* Class = "UINavigationItem"; title = "Library"; ObjectID = "hu7-5h-7t8"; */
 "hu7-5h-7t8.title" = "Библиотека";
 
+/* Class = "UITextView"; text = "This app allows you to read at incredible speeds without almost any training. You now have to do a little initial setup. "; ObjectID = "IsR-iN-T0O"; */
+"IsR-iN-T0O.text" = "Это приложение позволяет вам читать на невероятных скоростях без тренировок. Далее вам нужно пройти небольшую начальную настройку";
+
+/* Class = "UINavigationItem"; title = "Importing method"; ObjectID = "j0g-Rb-EmZ"; */
+"j0g-Rb-EmZ.title" = "Метод импорта";
+
 /* Class = "UINavigationItem"; title = "Text input"; ObjectID = "jap-UC-Sxa"; */
 "jap-UC-Sxa.title" = "Ввод текста";
-
-/* Class = "UIBarButtonItem"; title = "––"; ObjectID = "KlO-Ap-uwu"; */
-"KlO-Ap-uwu.title" = "––";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "kmN-9F-GFX"; */
 "kmN-9F-GFX.text" = "Label";
@@ -85,14 +115,20 @@
 /* Class = "UILabel"; text = "Label"; ObjectID = "KY1-3w-4dH"; */
 "KY1-3w-4dH.text" = "Label";
 
+/* Class = "UILabel"; text = "Input manually or copy"; ObjectID = "LOS-YP-HjC"; */
+"LOS-YP-HjC.text" = "Напечатать вручную или скопировать";
+
 /* Class = "UILabel"; text = "Label"; ObjectID = "LTd-lz-Eu6"; */
 "LTd-lz-Eu6.text" = "Label";
+
+/* Class = "UILabel"; text = "Time economy:"; ObjectID = "lWT-Gt-oHR"; */
+"lWT-Gt-oHR.text" = "Экономия времени";
 
 /* Class = "UILabel"; text = "Default reading speed"; ObjectID = "M2I-zV-g7F"; */
 "M2I-zV-g7F.text" = "Скорость чтения по-умолчанию";
 
-/* Class = "UILabel"; text = "Русский"; ObjectID = "MBc-9Z-4bx"; */
-"MBc-9Z-4bx.text" = "Русский";
+/* Class = "UILabel"; text = "Welcome to Fast Reader"; ObjectID = "mto-Wk-PDg"; */
+"mto-Wk-PDg.text" = "Добро пожаловать в Fast Reader";
 
 /* Class = "UILabel"; text = "Read today:"; ObjectID = "npi-Od-jji"; */
 "npi-Od-jji.text" = "Прочитано сегодня:";
@@ -103,14 +139,14 @@
 /* Class = "UITabBarItem"; title = "Library"; ObjectID = "pmD-tO-93Q"; */
 "pmD-tO-93Q.title" = "Библиотека";
 
-/* Class = "UITableViewController"; title = "Language picker"; ObjectID = "QgA-Zl-TcJ"; */
-"QgA-Zl-TcJ.title" = "Выбор языка";
-
 /* Class = "UILabel"; text = "Label"; ObjectID = "R4o-qQ-cbX"; */
 "R4o-qQ-cbX.text" = "Label";
 
 /* Class = "UITabBarItem"; title = "My profile"; ObjectID = "RbN-9J-9zb"; */
 "RbN-9J-9zb.title" = "Мой профиль";
+
+/* Class = "UIViewController"; title = "Book detail"; ObjectID = "rY8-aX-QXi"; */
+"rY8-aX-QXi.title" = "Подробности о книге";
 
 /* Class = "UIButton"; normalTitle = "Read last 15 words"; ObjectID = "TMw-cD-SAm"; */
 "TMw-cD-SAm.normalTitle" = "Поледние 15 слов";
@@ -126,6 +162,15 @@
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "XdN-8K-Xyv"; */
 "XdN-8K-Xyv.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Light"; ObjectID = "xjZ-nz-7oP"; */
+"xjZ-nz-7oP.normalTitle" = "Светлая";
+
+/* Class = "UILabel"; text = "Import from webage"; ObjectID = "xww-FL-31J"; */
+"xww-FL-31J.text" = "Импортировать из веб-страницы";
+
+/* Class = "UIButton"; normalTitle = "Done"; ObjectID = "Y1x-mV-aiS"; */
+"Y1x-mV-aiS.normalTitle" = "Готово";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "Yuv-UM-ftb"; */
 "Yuv-UM-ftb.text" = "Label";

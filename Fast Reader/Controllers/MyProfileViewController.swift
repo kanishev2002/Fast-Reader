@@ -9,41 +9,53 @@
 import UIKit
 import Charts
 
+// MARK: - Weekdays
+fileprivate let Monday = NSLocalizedString("Mon", comment: "Monday")
+fileprivate let Tuesday = NSLocalizedString("Tue", comment: "Tuesday")
+fileprivate let Wednesday = NSLocalizedString("Wed", comment: "Wednesday")
+fileprivate let Thursday = NSLocalizedString("Thu", comment: "Thursday")
+fileprivate let Friday = NSLocalizedString("Fri", comment: "Friday")
+fileprivate let Saturday = NSLocalizedString("Sat", comment: "Saturday")
+fileprivate let Sunday = NSLocalizedString("Sun", comment: "Sunday")
+
 fileprivate let weekdays = [
-    -6 : "Sat",
-    -5 : "Mon",
-    -4 : "Tue",
-    -3 : "Wed",
-    -2 : "Thu",
-    -1 : "Fri",
-    0 : "Sat",
-    1 : "Sun",
-    2 : "Mon",
-    3 : "Tue",
-    4 : "Wed",
-    5 : "Thu",
-    6 : "Fri",
-    7 : "Sat"
+    -6 : Saturday,
+    -5 : Monday,
+    -4 : Tuesday,
+    -3 : Wednesday,
+    -2 : Thursday,
+    -1 : Friday,
+    0 : Saturday,
+    1 : Sunday,
+    2 : Monday,
+    3 : Tuesday,
+    4 : Wednesday,
+    5 : Thursday,
+    6 : Friday,
+    7 : Saturday
 ]
 
 class MyProfileViewController: UIViewController {
-    
+    // MARK: - IBOutlets
     @IBOutlet weak var readTodayLabel: UILabel!
     @IBOutlet weak var wordsCountLabel: UILabel!
     @IBOutlet weak var timeOfReadingLabel: UILabel!
     @IBOutlet weak var maxReadingSpeedLabel: UILabel!
     @IBOutlet weak var timeEconomyLabel: UILabel!
     @IBOutlet weak var barChart: BarChartView!
+    
+    // MARK: - Variables
     var stats = DataController.shared.getStats()
     var viewControllerWasLoaded = false
     let defaults = UserDefaults.standard
     
+    // MARK: - Managing views
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         if viewControllerWasLoaded {
             setupBarChart()
             setupLabels()
-            //print("viewWillAppear was called")
         }
         viewControllerWasLoaded = true
     }
@@ -56,12 +68,12 @@ class MyProfileViewController: UIViewController {
         barChart.noDataText = NSLocalizedString("Not enough information yet", comment: "Empty chart message")
         barChart.noDataFont = .systemFont(ofSize: 25.0)
         barChart.noDataTextColor = #colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1)
-        /*if let theme = defaults.string(forKey: "Theme"), theme == "Dark"{
+        if let theme = defaults.string(forKey: "Theme"), theme == "Dark"{
             toggleDarkMode()
         }
         else {
             toggleLightMode()
-        }*/
+        }
         print("Last exit day: \(defaults.integer(forKey: "lastExitDay"))")
         print("Last exit week: \(defaults.integer(forKey: "lastExitWeek"))")
         print("Current day: \(Calendar.current.component(.weekday, from: Date()))")
@@ -75,21 +87,6 @@ class MyProfileViewController: UIViewController {
                 stats.append(DataController.shared.getNewStatisticsEntry())
             }
             else if lastExitWeek != currentWeek {
-                /*for _ in 0 ..< min(7, (currentWeek-lastExitWeek)*7 + currentWeekday - lastExitDay) {
-                    DataController.shared.saveStat(words: 0, time: 0)
-                    print("MPVC Added an empty stat")
-                }
-                stats = DataController.shared.getStats()
-                print("Number of stats: \(stats.count)")
-                if stats.count > 7 {
-                    for i in 0 ..< stats.count - 7 {
-                        DataController.shared.deleteStatisticsEntry(stats[i])
-                        print("MPVC deleted a stat")
-                    }
-                    print("MPVC: Number of stats \(DataController.shared.getStats().count)")
-                    stats = DataController.shared.getStats()
-                    
-                }*/
                 DataController.shared.deleteAllEntries()
                 stats = [DataController.shared.getNewStatisticsEntry()]
             }
@@ -98,8 +95,9 @@ class MyProfileViewController: UIViewController {
         setupLabels()
     }
     
+    // MARK: - Functions
+    
     func setupBarChart(){
-        //let weekday = Calendar.current.component(.weekday, from: Date())
         stats = DataController.shared.getStats()
         var datasets = [BarChartDataSet]()
         print(stats)
@@ -111,6 +109,7 @@ class MyProfileViewController: UIViewController {
         else {
             chartDataColor = .blue
         }
+        
         for (index, day) in stats.enumerated() {
             let newEntry = BarChartDataEntry(x: Double(index) + 1.0, y: day.averageSpeed)
             let weekday = Calendar.current.component(.weekday, from: Date(timeIntervalSinceReferenceDate: day.creationTime as TimeInterval))
@@ -118,11 +117,9 @@ class MyProfileViewController: UIViewController {
             chartDataSet.setColors(chartDataColor)
             datasets.append(chartDataSet)
         }
-        //let localizedChartName = NSLocalizedString("Average reading speed", comment: "Reading speed chart name")
         let chartData = BarChartData(dataSets: datasets)
-        //chartData.setValueTextColor(.white)
         barChart.data = datasets.isEmpty ? nil : chartData
-        barChart.animate(xAxisDuration: 1.0, yAxisDuration: 2.0)
+        barChart.animate(xAxisDuration: 1.0, yAxisDuration: 1.0)
     }
     
     func setupLabels() {
@@ -143,7 +140,7 @@ class MyProfileViewController: UIViewController {
         wordsCountLabel.text = localizedWordsCount + String(defaults.integer(forKey: "wordsCount")) + localizedWords
         
         if let time = defaults.value(forKey: "totalTimeOfReading") as? Double {
-            timeOfReadingLabel.text = localizedTotalTime + String(Int(time.rounded() / 60.0)) + localizedMinutes
+            timeOfReadingLabel.text = localizedTotalTime + " " + String(Int(time.rounded() / 60.0)) + localizedMinutes
             let words = defaults.integer(forKey: "wordsCount")
             timeEconomyLabel.text = localizedTimeEconomy + String(Int(Double(words) / 150.0 - time / 60.0)) + localizedMinutes
         }
@@ -160,17 +157,28 @@ class MyProfileViewController: UIViewController {
     }
 }
 
+// MARK: - Dark mode
 
 extension MyProfileViewController: DarkModeApplicable {
     func toggleDarkMode() {
-        //barChart.gridBackgroundColor = .green
-        //barChart.tintColor = .white
-        //barChart.backgroundColor = .white
-        //barChart.borderColor = .white
-        view.backgroundColor = .lightGray
+        if let version = Int(String(systemVersion)), version<13 {
+            readTodayLabel.textColor = .white
+            wordsCountLabel.textColor = .white
+            timeOfReadingLabel.textColor = .white
+            maxReadingSpeedLabel.textColor = .white
+            timeEconomyLabel.textColor = .white
+            view.backgroundColor = .black
+        }
     }
     
     func toggleLightMode() {
-        view.backgroundColor = .white
+        if let version = Int(String(systemVersion)), version<13 {
+            readTodayLabel.textColor = .black
+            wordsCountLabel.textColor = .black
+            timeOfReadingLabel.textColor = .black
+            maxReadingSpeedLabel.textColor = .black
+            timeEconomyLabel.textColor = .black
+            view.backgroundColor = .white
+        }
     }
 }

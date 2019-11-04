@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0925351B23643AAA00F8CF59 /* WelcomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0925351A23643AAA00F8CF59 /* WelcomePageViewController.swift */; };
 		093C9D5422FDE0E8004D2F35 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 093C9D5222FDE0E8004D2F35 /* Localizable.strings */; };
 		0944D52223329D6B00D3E600 /* iTunesImportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0944D52123329D6B00D3E600 /* iTunesImportViewController.swift */; };
 		0950990222C51824004C4461 /* LibraryStorage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0950990022C51824004C4461 /* LibraryStorage.xcdatamodeld */; };
@@ -15,6 +16,7 @@
 		09820E1D22B428FF00EBFD1D /* ThemePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09820E1C22B428FF00EBFD1D /* ThemePickerViewController.swift */; };
 		09820E1F22B42E1600EBFD1D /* FontPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09820E1E22B42E1600EBFD1D /* FontPickerCell.swift */; };
 		09820E2122B4346200EBFD1D /* FontPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09820E2022B4346200EBFD1D /* FontPickerViewController.swift */; };
+		098869832365EAA500299D53 /* Welcome1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098869822365EAA500299D53 /* Welcome1ViewController.swift */; };
 		0994D2D82317F63F000A7BF0 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0994D2D72317F63F000A7BF0 /* WebViewController.swift */; };
 		09963026231AB9660099C9A9 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09963025231AB9660099C9A9 /* WebKit.framework */; };
 		0998C10121DA23C9000FCAF9 /* FastReadingInterfaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0998C10021DA23C9000FCAF9 /* FastReadingInterfaceViewController.swift */; };
@@ -26,16 +28,17 @@
 		09C7E00F22C2496B00C8ECEB /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C7E00E22C2496B00C8ECEB /* LibraryViewController.swift */; };
 		09C9FAD922B0147F00113068 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C9FAD822B0147F00113068 /* SettingsViewController.swift */; };
 		09D0032E22C8DAEB00AFCA52 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D0032D22C8DAEB00AFCA52 /* DataController.swift */; };
-		09DC3F8A21D50DFC0057F922 /* FastReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DC3F8921D50DFC0057F922 /* FastReaderViewController.swift */; };
+		09D4020823699B4D00B02852 /* Welcome2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D4020723699B4D00B02852 /* Welcome2ViewController.swift */; };
+		09DC3F8A21D50DFC0057F922 /* TextInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DC3F8921D50DFC0057F922 /* TextInputViewController.swift */; };
 		09E8339C23005C8400F9AE03 /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E8339B23005C8400F9AE03 /* MyProfileViewController.swift */; };
+		09EAFCEB2369FCBC003259C5 /* Welcome3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EAFCEA2369FCBC003259C5 /* Welcome3ViewController.swift */; };
 		09EC4D1723140338007BC671 /* AddingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EC4D1623140338007BC671 /* AddingTableViewController.swift */; };
-		09FEB871230035A1002D87FB /* LanguagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FEB870230035A1002D87FB /* LanguagePickerViewController.swift */; };
 		09FEB873230037D0002D87FB /* DarkModeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FEB872230037D0002D87FB /* DarkModeProtocol.swift */; };
 		A66FBFDB02D180AC1DEFEBFB /* Pods_Fast_Reader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0DB33CEA5AEB7AF285DC6F3 /* Pods_Fast_Reader.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		092D988022FDCDF200A7F304 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
+		0925351A23643AAA00F8CF59 /* WelcomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePageViewController.swift; sourceTree = "<group>"; };
 		092D988122FDCDF200A7F304 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		093C9D5322FDE0E8004D2F35 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0944D52123329D6B00D3E600 /* iTunesImportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesImportViewController.swift; sourceTree = "<group>"; };
@@ -45,6 +48,7 @@
 		09820E1C22B428FF00EBFD1D /* ThemePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemePickerViewController.swift; sourceTree = "<group>"; };
 		09820E1E22B42E1600EBFD1D /* FontPickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontPickerCell.swift; sourceTree = "<group>"; };
 		09820E2022B4346200EBFD1D /* FontPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontPickerViewController.swift; sourceTree = "<group>"; };
+		098869822365EAA500299D53 /* Welcome1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Welcome1ViewController.swift; sourceTree = "<group>"; };
 		0994D2D72317F63F000A7BF0 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		09963025231AB9660099C9A9 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		0998C10021DA23C9000FCAF9 /* FastReadingInterfaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastReadingInterfaceViewController.swift; sourceTree = "<group>"; };
@@ -58,10 +62,12 @@
 		09C7E00E22C2496B00C8ECEB /* LibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
 		09C9FAD822B0147F00113068 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		09D0032D22C8DAEB00AFCA52 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
-		09DC3F8921D50DFC0057F922 /* FastReaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastReaderViewController.swift; sourceTree = "<group>"; };
+		09D4020723699B4D00B02852 /* Welcome2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Welcome2ViewController.swift; sourceTree = "<group>"; };
+		09DB7057236ECE9200D74193 /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ru; path = ru.lproj/Main.storyboard; sourceTree = "<group>"; };
+		09DC3F8921D50DFC0057F922 /* TextInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputViewController.swift; sourceTree = "<group>"; };
 		09E8339B23005C8400F9AE03 /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
+		09EAFCEA2369FCBC003259C5 /* Welcome3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Welcome3ViewController.swift; sourceTree = "<group>"; };
 		09EC4D1623140338007BC671 /* AddingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingTableViewController.swift; sourceTree = "<group>"; };
-		09FEB870230035A1002D87FB /* LanguagePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagePickerViewController.swift; sourceTree = "<group>"; };
 		09FEB872230037D0002D87FB /* DarkModeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeProtocol.swift; sourceTree = "<group>"; };
 		176B0CC22F671DFFCA72711B /* Pods-Fast Reader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fast Reader.release.xcconfig"; path = "Target Support Files/Pods-Fast Reader/Pods-Fast Reader.release.xcconfig"; sourceTree = "<group>"; };
 		B0DB33CEA5AEB7AF285DC6F3 /* Pods_Fast_Reader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fast_Reader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -123,23 +129,34 @@
 			path = "Fast Reader";
 			sourceTree = "<group>";
 		};
+		09D4020923699B9300B02852 /* WelcomeControllers */ = {
+			isa = PBXGroup;
+			children = (
+				0925351A23643AAA00F8CF59 /* WelcomePageViewController.swift */,
+				098869822365EAA500299D53 /* Welcome1ViewController.swift */,
+				09D4020723699B4D00B02852 /* Welcome2ViewController.swift */,
+				09EAFCEA2369FCBC003259C5 /* Welcome3ViewController.swift */,
+			);
+			path = WelcomeControllers;
+			sourceTree = "<group>";
+		};
 		09D759E222B43E51001BFABA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				0944D52123329D6B00D3E600 /* iTunesImportViewController.swift */,
+				09EC4D1623140338007BC671 /* AddingTableViewController.swift */,
 				0973555322D39FAA009899B7 /* BookDetailViewController.swift */,
-				09C7E00E22C2496B00C8ECEB /* LibraryViewController.swift */,
-				09DC3F8921D50DFC0057F922 /* FastReaderViewController.swift */,
+				09D0032D22C8DAEB00AFCA52 /* DataController.swift */,
 				0998C10021DA23C9000FCAF9 /* FastReadingInterfaceViewController.swift */,
 				09820E2022B4346200EBFD1D /* FontPickerViewController.swift */,
-				09820E1C22B428FF00EBFD1D /* ThemePickerViewController.swift */,
-				09C9FAD822B0147F00113068 /* SettingsViewController.swift */,
 				095CA30922E4D205005BD5CB /* ImportController.swift */,
-				09D0032D22C8DAEB00AFCA52 /* DataController.swift */,
-				09FEB870230035A1002D87FB /* LanguagePickerViewController.swift */,
+				0944D52123329D6B00D3E600 /* iTunesImportViewController.swift */,
+				09C7E00E22C2496B00C8ECEB /* LibraryViewController.swift */,
 				09E8339B23005C8400F9AE03 /* MyProfileViewController.swift */,
-				09EC4D1623140338007BC671 /* AddingTableViewController.swift */,
+				09C9FAD822B0147F00113068 /* SettingsViewController.swift */,
+				09DC3F8921D50DFC0057F922 /* TextInputViewController.swift */,
+				09820E1C22B428FF00EBFD1D /* ThemePickerViewController.swift */,
 				0994D2D72317F63F000A7BF0 /* WebViewController.swift */,
+				09D4020923699B9300B02852 /* WelcomeControllers */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -301,21 +318,24 @@
 				0950990222C51824004C4461 /* LibraryStorage.xcdatamodeld in Sources */,
 				0994D2D82317F63F000A7BF0 /* WebViewController.swift in Sources */,
 				09820E1F22B42E1600EBFD1D /* FontPickerCell.swift in Sources */,
-				09FEB871230035A1002D87FB /* LanguagePickerViewController.swift in Sources */,
 				0944D52223329D6B00D3E600 /* iTunesImportViewController.swift in Sources */,
 				0973555422D39FAA009899B7 /* BookDetailViewController.swift in Sources */,
 				09C7E00F22C2496B00C8ECEB /* LibraryViewController.swift in Sources */,
 				09820E1D22B428FF00EBFD1D /* ThemePickerViewController.swift in Sources */,
+				098869832365EAA500299D53 /* Welcome1ViewController.swift in Sources */,
 				095CA30A22E4D205005BD5CB /* ImportController.swift in Sources */,
+				09EAFCEB2369FCBC003259C5 /* Welcome3ViewController.swift in Sources */,
 				09BDBF3621B7E06300F09098 /* AppDelegate.swift in Sources */,
-				09DC3F8A21D50DFC0057F922 /* FastReaderViewController.swift in Sources */,
+				09DC3F8A21D50DFC0057F922 /* TextInputViewController.swift in Sources */,
 				09C7E00B22C2489200C8ECEB /* LibraryCell.swift in Sources */,
 				09820E2122B4346200EBFD1D /* FontPickerViewController.swift in Sources */,
 				09C9FAD922B0147F00113068 /* SettingsViewController.swift in Sources */,
 				09D0032E22C8DAEB00AFCA52 /* DataController.swift in Sources */,
 				09E8339C23005C8400F9AE03 /* MyProfileViewController.swift in Sources */,
 				09FEB873230037D0002D87FB /* DarkModeProtocol.swift in Sources */,
+				0925351B23643AAA00F8CF59 /* WelcomePageViewController.swift in Sources */,
 				09EC4D1723140338007BC671 /* AddingTableViewController.swift in Sources */,
+				09D4020823699B4D00B02852 /* Welcome2ViewController.swift in Sources */,
 				0998C10121DA23C9000FCAF9 /* FastReadingInterfaceViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -335,7 +355,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				09BDBF3A21B7E06300F09098 /* Base */,
-				092D988022FDCDF200A7F304 /* ru */,
+				09DB7057236ECE9200D74193 /* ru */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

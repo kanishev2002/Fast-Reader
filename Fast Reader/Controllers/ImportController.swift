@@ -8,7 +8,6 @@
 
 import Foundation
 import PDFKit
-//import EPUBKit
 
 class ImportController {
     let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
@@ -21,7 +20,6 @@ class ImportController {
     func importAllFiles() {
         importPDFFiles()
         importTXTFiles()
-        //importEpubFiles()
         importRTFFiles()
     }
     
@@ -32,7 +30,7 @@ class ImportController {
             for URL in PDFFiles {
                 if let pdf = PDFDocument(url: URL), let text = pdf.string {
                     
-                    DataController.shared.saveBook(named: URL.deletingPathExtension().lastPathComponent, withText: text.components(separatedBy: .whitespacesAndNewlines), by: localizedAuthor)
+                    DataController.shared.saveBook(named: URL.deletingPathExtension().lastPathComponent, withText: text, by: localizedAuthor)
                 }
                 try fileManager.removeItem(at: URL)
             }
@@ -49,7 +47,7 @@ class ImportController {
             for URL in TXTFiles {
                 do {
                     let text = try String(contentsOf: URL)
-                    DataController.shared.saveBook(named: URL.deletingPathExtension().lastPathComponent, withText: text.components(separatedBy: .whitespacesAndNewlines), by: localizedAuthor)
+                    DataController.shared.saveBook(named: URL.deletingPathExtension().lastPathComponent, withText: text, by: localizedAuthor)
                     try fileManager.removeItem(at: URL)
                 }
                 catch {
@@ -63,34 +61,6 @@ class ImportController {
         }
     }
     
-    /*func importEpubFiles() {
-        do {
-            let directoryContent = try fileManager.contentsOfDirectory(at: documentsDirectory, includingPropertiesForKeys: nil, options: .skipsHiddenFiles)
-            let EpubFiles = directoryContent.filter{ $0.pathExtension == "epub" }
-            for URL in EpubFiles {
-                if let document = EPUBDocument(url: URL) {
-                    let text = NSMutableAttributedString()
-                    try document.spine.items.forEach {
-                        guard let path = document.manifest.items[$0.idref]?.path, let url = NSURL(string: path) else { return }
-                        let attributed = try NSAttributedString(data: Data(contentsOf: url as URL), options: [.documentType : NSAttributedString.DocumentType.html], documentAttributes: nil)
-                        text.append(attributed)
-                    }
-                    if text.length != 0 {
-                        let localizedName = NSLocalizedString("Unknown name", comment: "Unknown name")
-                        DataController.shared.saveBook(named: document.title ?? localizedName, withText: text.string.components(separatedBy: .whitespacesAndNewlines), by: document.author ?? localizedAuthor)
-                    }
-                    else {
-                        print("Text is empty!")
-                    }
-                    try fileManager.removeItem(at: URL)
-                }
-            }
-        }
-        catch {
-            print("Couldn't access directory content - \(error.localizedDescription)")
-        }
-    }*/
-    
     func importRTFFiles() {
         do {
             let directoryContent = try fileManager.contentsOfDirectory(at: documentsDirectory, includingPropertiesForKeys: nil, options: .skipsHiddenFiles)
@@ -99,7 +69,7 @@ class ImportController {
                 do {
                     let data = try Data(contentsOf: URL)
                     let text = try NSAttributedString(data: data, options: [NSAttributedString.DocumentReadingOptionKey.documentType : NSAttributedString.DocumentType.rtf], documentAttributes: nil).string
-                    DataController.shared.saveBook(named: documentsDirectory.lastPathComponent, withText: text.components(separatedBy: .whitespacesAndNewlines), by: localizedAuthor)
+                    DataController.shared.saveBook(named: documentsDirectory.lastPathComponent, withText: text, by: localizedAuthor)
                     try fileManager.removeItem(at: URL)
                 }
                 catch {

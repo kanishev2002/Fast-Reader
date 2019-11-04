@@ -11,25 +11,25 @@ import UIKit
 fileprivate let punctuationMarks: Set = [Character("."), Character(","), Character("?"), Character("!"), Character(";")]
 
 class FastReadingInterfaceViewController: UIViewController {
+    //MARK: - IBOutlets
     
     @IBOutlet weak var toolbar: UIToolbar!
     @IBOutlet weak var wpmCounter: UILabel!
     @IBOutlet weak var wordPart1: UILabel!
     @IBOutlet weak var wordPart2: UILabel!
     @IBOutlet weak var wordPart3: UILabel!
-    //@IBOutlet weak var toolBarConstraint: NSLayoutConstraint!
     @IBOutlet weak var readAgainButton: UIButton!
     @IBOutlet weak var last15WordsButton: UIButton!
     @IBOutlet weak var percentageLabel: UILabel!
     @IBOutlet weak var readingSpeedStepper: UIStepper!
     
-    
+    // MARK: - Variables
     
     var savedBook: Book?
     var text: [String]?
     var position = 0
     var readingSpeed = 60.0
-    var didComeFromBookDetails = false
+    var bookIsSaved = false
     
     private var timerShouldRepeat = false
     private var timer: Timer?
@@ -37,17 +37,18 @@ class FastReadingInterfaceViewController: UIViewController {
     private var isReading = true
     private var startTime = 0.0
     private var endTime = 0.0
-    //private var dailyWordCount = 0
-    //private var totalTimeOfReading = 0.0
+    private var totalTime = 0.0
+    private var wordCount = 0
+    
     private var currentStatEntry = DataController.shared.getStats().last ?? DataController.shared.getNewStatisticsEntry()
     private var stats = DataController.shared.getStats()
+    
     private let defaults = UserDefaults.standard
     private let dataController = DataController.shared
-    private var wordsCount = 0
-    private var totalTime = 0.0
-    //private var numberOfTimer = 0 // Debug
+    private let localizedWPM = NSLocalizedString(" words/min", comment: "words per minute")
     
     
+    // MARK: - IBActions
     
     @IBAction func playButtonTouched(_ sender: Any) {
         //print("playButtonTouched")
@@ -83,44 +84,9 @@ class FastReadingInterfaceViewController: UIViewController {
     
     @IBAction func stepperValueChanged(_ sender: UIStepper) {
         readingSpeed = sender.value
-        wpmCounter.text = String(Int(readingSpeed))
+        wpmCounter.text = String(Int(readingSpeed)) + localizedWPM
+        print(1)
     }
-    
-    /*@IBAction func decreaseReadingSpeed(_ sender: UIBarButtonItem) {
-        readingSpeed = max(0, readingSpeed-10)
-        wpmCounter.text = String(readingSpeed)
-        if readingSpeed == 0
-        {
-            changeReadingState()
-        }
-        if isReading
-        {
-            // print("Timer \(timer!.userInfo as! Int) invalidated")
-            //numberOfTimer+=1
-            timer?.invalidate()
-            timer = Timer.scheduledTimer(timeInterval: 1.0/(readingSpeed/60.0), target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
-            timer?.tolerance = 0
-            timer?.fire()
-            // print("Timer \(timer!.userInfo as! Int) created")
-        }
-        //print("Reading speed is \(readingSpeed)")
-    }
-    
-    @IBAction func increaseReadingSpeed(_ sender: UIBarButtonItem) {
-        readingSpeed+=10
-        wpmCounter.text = String(readingSpeed)
-        if isReading
-        {
-            // print("Timer \(timer!.userInfo as! Int) invalidated")
-            timer?.invalidate()
-            //numberOfTimer+=1
-            timer = Timer.scheduledTimer(timeInterval: 1.0/(readingSpeed/60.0), target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
-            timer?.tolerance = 0
-            timer?.fire()
-            // // print("Timer \(timer!.userInfo as! Int) created")
-        }
-        //print("Reading speed is \(readingSpeed)")
-    }*/
     
     @IBAction func rewindButtonTouched(_ sender: UIBarButtonItem) {
         position = max(position - 15, 0)
@@ -154,16 +120,112 @@ class FastReadingInterfaceViewController: UIViewController {
         configurePercentageLabel()
     }
     
+    // MARK: - Managing views
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        tabBarController?.tabBar.isHidden = false
+        if isReading {
+            changeReadingState()
+        }
+        currentStatEntry.averageSpeed = Double(currentStatEntry.wordsCount) / (currentStatEntry.readingTime / 60.0)
+        let words = defaults.integer(forKey: "wordsCount")
+        let time  = defaults.double(forKey: "totalTimeOfReading")
+        defaults.set(words+wordCount, forKey: "wordsCount")
+        defaults.set(time+totalTime, forKey: "totalTimeOfReading")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        totalTime = 0.0
+        wordCount = 0
+        tabBarController?.tabBar.isHidden = true
+        configurePercentageLabel()
+        if bookIsSaved {
+            navigationItem.rightBarButtonItem?.isEnabled = false
+        }
+        else {
+            navigationItem.rightBarButtonItem?.isEnabled = true
+        }
+        
+        if let theme = defaults.string(forKey: "Theme"), theme == "Dark" {
+            toggleDarkMode()
+        }
+        else {
+            toggleLightMode()
+        }
+        
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        navigationController?.toolbar.isHidden = true
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(prepareForBackground), name: NSNotification.Name("applicationWillResignActive"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(toggleDarkMode), name: .darkModeEnabled, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(toggleLightMode), name: .darkModeDisabled, object: nil)
+        
+        tabBarController?.tabBar.isHidden = true
+        readAgainButton.isHidden = true
+        last15WordsButton.isHidden = true
+        navigationController?.navigationBar.isHidden = true
+        let saveButtonTitle = NSLocalizedString("Save", comment: "Save button title")
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: saveButtonTitle, style: .plain, target: self, action: #selector(saveButtonTouched))
+        
+        if let lastExitTime = defaults.value(forKey: "lastExitTime") as? Date, defaults.integer(forKey: "lastExitDay") != 0, defaults.integer(forKey: "lastExitWeek") != 0 {
+            let secondsInAnHour = 60.0 * 60.0
+            let timeDifference = (Date().timeIntervalSince(lastExitTime) / secondsInAnHour) as Double
+            print("timeDifference is \(timeDifference)")
+            let currentWeekday = Calendar.current.component(.weekday, from: Date())
+            let currentWeek = Calendar.current.component(.weekOfYear, from: Date())
+            let lastExitDay = defaults.integer(forKey: "lastExitDay")
+            let lastExitWeek = defaults.integer(forKey: "lastExitWeek")
+            if currentWeekday != lastExitDay || currentWeek != lastExitWeek {
+                currentStatEntry = dataController.getNewStatisticsEntry()
+                print("FRIVC Added a new stat")
+                stats.append(currentStatEntry)
+                if stats.count > 7 {
+                    dataController.deleteStatisticsEntry(stats[0])
+                    stats.remove(at: 0)
+                    print("FRIVC Deleted a stat")
+                }
+                print("Number of stats: \(stats.count)")
+            }
+        }
+        else {
+            print("Last exit not found")
+        }
+        
+        if let defaultReadingSpeed = defaults.value(forKey: "Default reading speed") as? Double {
+            timer = Timer.scheduledTimer(timeInterval: 1.0/(defaultReadingSpeed/60.0), target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
+            wpmCounter.text = String(defaultReadingSpeed) + localizedWPM
+            readingSpeedStepper.value = defaultReadingSpeed
+            timer?.tolerance = 0
+            timer?.fire()
+            readingSpeed = defaultReadingSpeed
+            print("Reading speed: \(readingSpeed)")
+        }
+        else {
+            timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
+            wpmCounter.text = String(readingSpeed) + localizedWPM
+            readingSpeedStepper.value = readingSpeed
+            print("Reading speed: \(readingSpeed)")
+            timer?.tolerance = 0
+            timer?.fire()
+        }
+        startTime = Date.timeIntervalSinceReferenceDate
+        percentageLabel.isHidden = true
+        readingSpeedStepper.isHidden = true
+    }
+    
+    // MARK: - Functions
     
     func changeReadingState() {
         if isReading {
             isReading = false
-            // print("Timer \(timer!.userInfo as! Int) invalidated")
-            //numberOfTimer+=1
             timer?.invalidate()
             tmpTimer?.invalidate()
             endTime = Date().timeIntervalSinceReferenceDate
-            //print("Start time is: \(startTime)\nEnd time is: \(endTime)")
             currentStatEntry.readingTime += (endTime - startTime)
             totalTime += (endTime - startTime)
             var items = toolbar.items
@@ -172,33 +234,19 @@ class FastReadingInterfaceViewController: UIViewController {
             navigationController?.navigationBar.isHidden = false
             if savedBook != nil {
                 savedBook!.position = Int64(self.position)
-                dataController.saveData()
+                //dataController.saveData()
             }
             percentageLabel.isHidden = false
             readingSpeedStepper.isHidden = false
-            configurePercentageLabel()
-            /*if let book = savedBook {
-                let position = Double(book.position)
-                let wordsCount = Double(book.text!.count)
-                let localizedPercentageLabel = NSLocalizedString("Read: \(Int((position/wordsCount)*100.0))% Remaining: \(Int((wordsCount - position) / readingSpeed)) min", comment: "Percentage label")
-                percentageLabel.text = localized
-            
-            }
-            else */
-        }
+            configurePercentageLabel()        }
         else {
             isReading = true
             timer = Timer.scheduledTimer(timeInterval: 1.0/(readingSpeed/60.0), target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
-            //numberOfTimer+=1
-            // print("Timer \(timer!.userInfo as! Int) created")
             print("Reading speed is \(readingSpeed)")
             var items = toolbar.items
             items![3] = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.pause, target: self, action: #selector(FastReadingInterfaceViewController.playButtonTouched(_:)))
             toolbar.setItems(items, animated: true)
             navigationController?.navigationBar.isHidden = true
-            view.updateConstraints()
-            view.setNeedsLayout()
-            timer?.tolerance = 0
             timer?.fire()
             startTime = Date().timeIntervalSinceReferenceDate
             percentageLabel.isHidden = true
@@ -210,140 +258,77 @@ class FastReadingInterfaceViewController: UIViewController {
         if let text = text {
             let position = Double(self.position)
             let wordsCount = Double(text.count)
-            let localizedPercentageLabel = NSLocalizedString("Read: \(Int((position/wordsCount)*100.0))% Remaining: \(Int((wordsCount - position) / readingSpeed)) min", comment: "Percentage label")
-            percentageLabel.text = localizedPercentageLabel
+            let localizedPercentageLabel = NSLocalizedString("Read: ", comment: "percentage label")
+            let percentage = "\(Int((position/wordsCount)*100.0))% "
+            let remainingLabel = NSLocalizedString("Remaining: ", comment: "percentage label")
+            let remaining = "\(Int((wordsCount - position) / readingSpeed)) "
+            let localizedMinutes = NSLocalizedString("min", comment: "minutes")
+            percentageLabel.text = localizedPercentageLabel+percentage+remainingLabel+remaining+localizedMinutes
         }
     }
     
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        tabBarController?.tabBar.isHidden = false
-        let time = defaults.double(forKey: "totalTimeOfReading")
-        let words = defaults.integer(forKey: "wordsCount")
-        defaults.set(time+totalTime, forKey: "totalTimeOfReading")
-        defaults.set(wordsCount+words, forKey: "wordsCount")
-        prepareForBackground()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        totalTime = 0.0
-        wordsCount = 0
-        tabBarController?.tabBar.isHidden = true
-        configurePercentageLabel()
-        if didComeFromBookDetails {
-            navigationItem.rightBarButtonItem?.isEnabled = false
+    func getAttributedWord(_ word: String) -> [NSAttributedString] {
+        
+        let index = word.index(word.startIndex, offsetBy: getRedLetterPosition(word.count))
+        let font: String
+        
+        if let defaultFont = defaults.string(forKey: "Default font"), defaults.integer(forKey: "Default font size") != 0 {
+            font = defaultFont
         }
         else {
-            navigationItem.rightBarButtonItem?.isEnabled = true
+            defaults.set("Helvetica", forKey: "Default font")
+            defaults.set(50, forKey: "Default font size")
+            font = "Helvetica"
         }
         
-        /*if let theme = defaults.string(forKey: "Theme"), theme == "Dark" {
-            toggleDarkMode()
+        var fontSize = defaults.integer(forKey: "Default font size")
+        if fontSize == 0 {
+            fontSize = 30
+        }
+        
+        let themeTextColor: UIColor
+        
+        if #available(iOS 13.0, *) {
+            themeTextColor = .label
+        } else if let theme = defaults.string(forKey: "Theme"), theme == "Dark" {
+            themeTextColor = .white
         }
         else {
-            toggleLightMode()
-        }*/
+            themeTextColor = .black
+        }
         
-        //toolBarConstraint.constant = -(tabBarController?.tabBar.bounds.height)! / 2.0
-        //print("bounds height is \(toolBarConstraint.constant)")
+        
+        let attributes: [NSAttributedString.Key: Any] = [.font : UIFont(name: font, size: CGFloat(fontSize))!, .foregroundColor : themeTextColor]
+        
+        let part1 = NSAttributedString(string: String(word[..<index]), attributes: attributes)
+        let part2 = NSMutableAttributedString(string: String(word[index]), attributes: attributes)
+        part2.addAttribute(.foregroundColor, value: UIColor.red, range: NSRange(location: 0, length: 1))
+        
+        let nextIndex = word.index(after: index)
+        let part3 = NSAttributedString(string: String(word[nextIndex ..< word.endIndex]), attributes: attributes)
+        
+        let parts = [part1, part2, part3]
+        return parts
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        navigationController?.toolbar.isHidden = true
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(prepareForBackground), name: NSNotification.Name("applicationWillResignActive"), object: nil)
-        tabBarController?.tabBar.isHidden = true
-        readAgainButton.isHidden = true
-        last15WordsButton.isHidden = true
-        navigationController?.navigationBar.isHidden = true
-        let saveButtonTitle = NSLocalizedString("Save", comment: "Save button title")
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: saveButtonTitle, style: .plain, target: self, action: #selector(saveButtonTouched))
-        if let lastExitTime = defaults.value(forKey: "lastExitTime") as? Date, defaults.integer(forKey: "lastExitDay") != 0, defaults.integer(forKey: "lastExitWeek") != 0 {
-            let secondsInAnHour = 60.0 * 60.0
-            let timeDifference = (Date().timeIntervalSince(lastExitTime) / secondsInAnHour) as Double
-            print("timeDifference is \(timeDifference)")
-            let currentWeekday = Calendar.current.component(.weekday, from: Date())
-            let currentWeek = Calendar.current.component(.weekOfYear, from: Date())
-            let lastExitDay = defaults.integer(forKey: "lastExitDay")
-            let lastExitWeek = defaults.integer(forKey: "lastExitWeek")
-            if /*(24.0 <= timeDifference && timeDifference < 48.0) ||*/ currentWeekday != lastExitDay || currentWeek != lastExitWeek {
-                // TODO: Remove timeDifference and lastExitTime. Reinstall app for final testing
-                
-                /*dailyWordCount = 0
-                totalTimeOfReading = 0.0*/
-                //dataController.addStat(0.0)
-                currentStatEntry = dataController.getNewStatisticsEntry()
-                print("FRIVC Added a new stat")
-                stats.append(currentStatEntry)
-                if stats.count > 7 {
-                    dataController.deleteStatisticsEntry(stats[0])
-                    stats.remove(at: 0)
-                    print("FRIVC Deleted a stat")
-                }
-                print("Number of stats: \(stats.count)")
-            }
-            /*else if (lastExitWeek == currentWeek && currentWeekday - lastExitDay > 1) || lastExitWeek != currentWeek {
-                for _ in 0 ..< min(7, currentWeekday - lastExitDay + 7 + 7*(lastExitWeek - currentWeek)) {
-                    DataController.shared.saveStat(words: 0, time: 0)
-                    print("FRIVC Added an empty stat")
-                }
-                stats = DataController.shared.getStats()
-                print("Number of stats1: \(stats.count)")
-                if stats.count > 7 {
-                    for i in 0 ..< stats.count - 7 {
-                        DataController.shared.deleteStatisticsEntry(stats[i])
-                    }
-                    stats.removeFirst(stats.count - 7)
-                }
-                print("Number of stats2: \(stats.count)")
-                print(stats)
-            }*/
-        }
-        
-        if let defaultReadingSpeed = defaults.value(forKey: "Default reading speed") as? Double {
-            timer = Timer.scheduledTimer(timeInterval: 1.0/(defaultReadingSpeed/60.0), target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
-            //numberOfTimer+=1
-            // print("Timer \(timer!.userInfo as! Int) created")
-            wpmCounter.text = String(defaultReadingSpeed)
-            readingSpeedStepper.value = defaultReadingSpeed
-            timer?.tolerance = 0
-            timer?.fire()
-            readingSpeed = defaultReadingSpeed
-        }
-        else {
-            timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
-            //numberOfTimer+=1
-            // print("Timer \(timer!.userInfo as! Int) created")
-            wpmCounter.text = String(readingSpeed)
-            readingSpeedStepper.value = readingSpeed
-            timer?.tolerance = 0
-            timer?.fire()
-        }
-        startTime = Date.timeIntervalSinceReferenceDate
-        percentageLabel.isHidden = true
-        readingSpeedStepper.isHidden = true
+    func getRedLetterPosition(_ length: Int) -> Int
+    {
+        return ((length + 6) / 4) - 1
     }
+    
+    // MARK: - @Objc functions
     
     @objc func prepareForBackground() {
         if isReading {
             changeReadingState()
         }
-        //dataController.saveDailyStats(totalTime: totalTimeOfReading, words: dailyWordCount)
         currentStatEntry.averageSpeed = Double(currentStatEntry.wordsCount) / (currentStatEntry.readingTime / 60.0)
-        print(currentStatEntry.readingTime)
-        print(currentStatEntry.wordsCount)
-        print(stats)
-        //dataController.updateStats()
         dataController.saveData()
     }
     
     
     @objc func fireTimer()
     {
-        //print("Timer \(timer?.userInfo as? Int ?? -1) did fire")
         var text: [String] 
         
         if let savedText = self.text {
@@ -356,19 +341,16 @@ class FastReadingInterfaceViewController: UIViewController {
         
         if position >= text.count {
             isReading = false
-            // print("Timer \(timer!.userInfo as! Int) invalidated")
             timer?.invalidate()
             if startTime == 0.0 {
                 startTime = Date().timeIntervalSinceReferenceDate
             }
             endTime = Date().timeIntervalSinceReferenceDate
-            //print("Start time is: \(startTime)\nEnd time is: \(endTime)")
             currentStatEntry.readingTime += (endTime - startTime)
             totalTime += (endTime - startTime)
             toolbar.isHidden = true
             readingSpeedStepper.isHidden = true
             navigationController?.navigationBar.isHidden = false
-            //tabBarController?.tabBar.isHidden = false
             let localizedEndOfText = NSLocalizedString("End of text", comment: "Localized message shown after end of text")
             wpmCounter.text = localizedEndOfText
             readAgainButton.isHidden = false
@@ -382,12 +364,11 @@ class FastReadingInterfaceViewController: UIViewController {
             wordPart3.text = ""
         }
         else {
-            wpmCounter.text = String(readingSpeed)
+            wpmCounter.text = String(Int(readingSpeed)) + localizedWPM
+            print("Reading speed: \(readingSpeed)")
             let parts = getAttributedWord(text[position])
             if punctuationMarks.contains(parts[2].string.last ?? Character(" ")) {
-                tmpTimer = Timer(fireAt: Date().addingTimeInterval(0.6*1.0/(readingSpeed/60.0)), interval: 0.0, target: self, selector: #selector(fireTmpTimer(_:)), userInfo: nil, repeats: false)
-                // print("Timer \(timer!.userInfo as! Int) invalidated")
-                //numberOfTimer+=1
+                tmpTimer = Timer(fireAt: Date().addingTimeInterval(1.5*1.0/(readingSpeed/60.0)), interval: 0.0, target: self, selector: #selector(fireTmpTimer(_:)), userInfo: nil, repeats: false)
                 timer?.invalidate()
                 print("Timer has launched tmpTimer")
                 RunLoop.current.add(tmpTimer!, forMode: .default)
@@ -395,7 +376,7 @@ class FastReadingInterfaceViewController: UIViewController {
             }
             position += 1
             currentStatEntry.wordsCount += 1
-            wordsCount += 1
+            wordCount += 1
             wordPart1.attributedText = parts[0]
             wordPart2.attributedText = parts[1]
             wordPart3.attributedText = parts[2]
@@ -405,10 +386,7 @@ class FastReadingInterfaceViewController: UIViewController {
     
     @objc func fireTmpTimer(_ timer: Timer) {
         print("tmpTimer fired")
-        timer.invalidate()
         self.timer = Timer.scheduledTimer(timeInterval: 1.0 / (readingSpeed/60.0), target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
-        //numberOfTimer+=1
-        // print("Timer \(self.timer!.userInfo as! Int) created")
         self.timer?.fire()
     }
     
@@ -434,7 +412,7 @@ class FastReadingInterfaceViewController: UIViewController {
                 return
             }
             
-            self.dataController.saveBook(named: name, withText: self.text!, by: author, withPosition: self.position)
+            self.dataController.saveBook(named: name, withText: self.text!.joined(separator: " "), by: author, withPosition: self.position)
         })
         alertController.addAction(okAction)
         
@@ -442,78 +420,41 @@ class FastReadingInterfaceViewController: UIViewController {
             NotificationCenter.default.post(Notification(name: Notification.Name("libraryShouldUpdate")))
             self.savedBook = self.dataController.lastSavedBook
         })
-        print("saveAsBook function completed")
+        bookIsSaved = true
+        navigationItem.rightBarButtonItem?.isEnabled = false
     }
     
-    func getAttributedWord(_ word: String) -> [NSAttributedString] {
-        
-        let index = word.index(word.startIndex, offsetBy: getRedLetterPosition(word.count))
-        let font: String
-        
-        if let defaultFont = defaults.string(forKey: "Default font"), defaults.integer(forKey: "Default font size") != 0 {
-            font = defaultFont
-        }
-        else {
-            defaults.set("Helvetica", forKey: "Default font")
-            defaults.set(50, forKey: "Default font size")
-            font = "Helvetica"
-        }
-        
-        var fontSize = defaults.integer(forKey: "Default font size")
-        if fontSize == 0 {
-            fontSize = 30
-        }
-        
-        let themeTextColor: UIColor
-        if let theme = defaults.string(forKey: "Theme"), theme == "Dark" {
-            themeTextColor = .white
-        }
-        else {
-            themeTextColor = .black
-        }
-        
-        let attributes: [NSAttributedString.Key: Any] = [.font : UIFont(name: font, size: CGFloat(fontSize))!, .foregroundColor : themeTextColor]
-        
-        let part1 = NSAttributedString(string: String(word[..<index]), attributes: attributes)
-        let part2 = NSMutableAttributedString(string: String(word[index]), attributes: attributes)
-        part2.addAttribute(.foregroundColor, value: UIColor.red, range: NSRange(location: 0, length: 1))
-        
-        let nextIndex = word.index(after: index)
-        let part3 = NSAttributedString(string: String(word[nextIndex ..< word.endIndex]), attributes: attributes)
-        
-        let parts = [part1, part2, part3]
-        return parts
-    }
     
-    func getRedLetterPosition(_ length: Int) -> Int
-    {
-        return ((length + 6) / 4) - 1
-    }
 }
+
+// MARK: - Dark mode
 
 extension FastReadingInterfaceViewController: DarkModeApplicable {
     func toggleLightMode() {
-        view.backgroundColor = .white
-        wpmCounter.textColor = .black
-        navigationController?.navigationBar.barTintColor = .white
-        navigationController?.navigationBar.tintColor = UIButton(type: .system).tintColor
-        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.black]
-        tabBarController?.tabBar.barTintColor = .white
-        tabBarController?.tabBar.tintColor = UIButton(type: .system).tintColor
-        toolbar.barTintColor = .white
+        if let version = Int(String(systemVersion)), version<13 {
+            view.backgroundColor = .white
+            wpmCounter.textColor = .black
+            navigationController?.navigationBar.barTintColor = .white
+            navigationController?.navigationBar.tintColor = systemButtonColor
+            navigationController?.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.black]
+            tabBarController?.tabBar.barTintColor = .white
+            tabBarController?.tabBar.tintColor = systemButtonColor
+            toolbar.barTintColor = .white
+        }
     }
     
     func toggleDarkMode() {
-        //print("Dark mode toggled")
-        let tintColor = #colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1)
-        view.backgroundColor = .black
-        wpmCounter.textColor = tintColor
-        navigationController?.navigationBar.barTintColor = .black
-        navigationController?.navigationBar.tintColor = tintColor
-        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.white]
-        tabBarController?.tabBar.barTintColor = .black
-        tabBarController?.tabBar.tintColor = tintColor
-        toolbar.barTintColor = .black
-        toolbar.tintColor = tintColor
+        if let version = Int(String(systemVersion)), version<13 {
+            let tintColor = #colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1)
+            view.backgroundColor = .black
+            wpmCounter.textColor = tintColor
+            navigationController?.navigationBar.barTintColor = .black
+            navigationController?.navigationBar.tintColor = tintColor
+            navigationController?.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.white]
+            tabBarController?.tabBar.barTintColor = .black
+            tabBarController?.tabBar.tintColor = tintColor
+            toolbar.barTintColor = .black
+            toolbar.tintColor = tintColor
+        }
     }
 }

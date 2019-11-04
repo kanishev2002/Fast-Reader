@@ -2,241 +2,327 @@
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
   <file original="Fast Reader/Base.lproj/Main.storyboard" source-language="en" target-language="ru" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="10.3" build-num="10G8"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="11.2" build-num="11B52"/>
     </header>
     <body>
-      <trans-unit id="0hJ-y0-vIh.title">
+      <trans-unit id="0Hn-d6-ktT.text" xml:space="preserve">
+        <source>Adjust the font</source>
+        <target>Настройка шрифта</target>
+        <note>Class = "UILabel"; text = "Adjust the font"; ObjectID = "0Hn-d6-ktT";</note>
+      </trans-unit>
+      <trans-unit id="0hJ-y0-vIh.title" xml:space="preserve">
         <source>Font picker</source>
+        <target>Выбор шрифта</target>
         <note>Class = "UITableViewController"; title = "Font picker"; ObjectID = "0hJ-y0-vIh";</note>
       </trans-unit>
-      <trans-unit id="0w0-Vo-SjY.text">
+      <trans-unit id="0w0-Vo-SjY.text" xml:space="preserve">
         <source>Dark</source>
         <target>Тёмная</target>
         <note>Class = "UILabel"; text = "Dark"; ObjectID = "0w0-Vo-SjY";</note>
       </trans-unit>
-      <trans-unit id="2tF-cK-qsr.text">
+      <trans-unit id="2tF-cK-qsr.text" xml:space="preserve">
         <source>Label</source>
         <target>Label</target>
         <note>Class = "UILabel"; text = "Label"; ObjectID = "2tF-cK-qsr";</note>
       </trans-unit>
-      <trans-unit id="2xX-p9-PMx.text">
-        <source>English</source>
-        <target>English</target>
-        <note>Class = "UILabel"; text = "English"; ObjectID = "2xX-p9-PMx";</note>
-      </trans-unit>
-      <trans-unit id="4Rc-yq-7oU.text">
+      <trans-unit id="4Rc-yq-7oU.text" xml:space="preserve">
         <source>War and Peace</source>
         <target>Война и мир</target>
         <note>Class = "UITextField"; text = "War and Peace"; ObjectID = "4Rc-yq-7oU";</note>
       </trans-unit>
-      <trans-unit id="4hj-cY-0cH.title">
-        <source>Fastreading</source>
-        <target>Скорочтение</target>
-        <note>Class = "UINavigationController"; title = "Скорочтение"; ObjectID = "4hj-cY-0cH";</note>
-      </trans-unit>
-      <trans-unit id="5eW-HZ-vGZ.text">
+      <trans-unit id="5eW-HZ-vGZ.text" xml:space="preserve">
         <source>Read: remaining:</source>
         <target>Прочитано: Осталось</target>
         <note>Class = "UILabel"; text = "Read: remaining:"; ObjectID = "5eW-HZ-vGZ";</note>
       </trans-unit>
-      <trans-unit id="5zJ-Vr-qdG.text">
-        <source>Language</source>
-        <target>Язык</target>
-        <note>Class = "UILabel"; text = "Language"; ObjectID = "5zJ-Vr-qdG";</note>
+      <trans-unit id="7ke-sv-lA5.text" xml:space="preserve">
+        <source>This is example text</source>
+        <note>Class = "UILabel"; text = "This is example text"; ObjectID = "7ke-sv-lA5";</note>
       </trans-unit>
-      <trans-unit id="8wH-sC-eC3.text">
+      <trans-unit id="8wH-sC-eC3.text" xml:space="preserve">
         <source>Read: </source>
         <target>Прочитано: </target>
         <note>Class = "UILabel"; text = "Read: "; ObjectID = "8wH-sC-eC3";</note>
       </trans-unit>
-      <trans-unit id="9zO-lm-bL1.text">
+      <trans-unit id="9zO-lm-bL1.text" xml:space="preserve">
         <source>Light</source>
         <target>Светлая</target>
         <note>Class = "UILabel"; text = "Light"; ObjectID = "9zO-lm-bL1";</note>
       </trans-unit>
-      <trans-unit id="68n-kC-THH.text">
+      <trans-unit id="68n-kC-THH.text" xml:space="preserve">
         <source>Theme</source>
         <target>Тема</target>
         <note>Class = "UILabel"; text = "Theme"; ObjectID = "68n-kC-THH";</note>
       </trans-unit>
-      <trans-unit id="Avo-Xt-xCn.title">
+      <trans-unit id="Avo-Xt-xCn.title" xml:space="preserve">
         <source>Settings</source>
         <target>Настройки</target>
         <note>Class = "UITableViewController"; title = "Settings"; ObjectID = "Avo-Xt-xCn";</note>
       </trans-unit>
-      <trans-unit id="Bi2-aP-Y8g.text">
+      <trans-unit id="B84-aY-uRB.title" xml:space="preserve">
+        <source>iTunes import</source>
+        <target>Импорт через iTunes</target>
+        <note>Class = "UIViewController"; title = "iTunes import"; ObjectID = "B84-aY-uRB";</note>
+      </trans-unit>
+      <trans-unit id="Bi2-aP-Y8g.text" xml:space="preserve">
         <source>Label</source>
         <target>Label</target>
         <note>Class = "UILabel"; text = "Label"; ObjectID = "Bi2-aP-Y8g";</note>
       </trans-unit>
-      <trans-unit id="E8l-i7-VPX.normalTitle">
+      <trans-unit id="DAL-mQ-3GZ.text" xml:space="preserve">
+        <source>Choose theme</source>
+        <target>Выберите тему</target>
+        <note>Class = "UILabel"; text = "Choose theme"; ObjectID = "DAL-mQ-3GZ";</note>
+      </trans-unit>
+      <trans-unit id="Dfe-oY-UZu.text" xml:space="preserve">
+        <source>Max reading speed:</source>
+        <target>Максимальная скорость чтения</target>
+        <note>Class = "UILabel"; text = "Max reading speed:"; ObjectID = "Dfe-oY-UZu";</note>
+      </trans-unit>
+      <trans-unit id="E8l-i7-VPX.normalTitle" xml:space="preserve">
         <source>Fast Read it!</source>
         <target>Fast Read it!</target>
         <note>Class = "UIButton"; normalTitle = "Fast Read it!"; ObjectID = "E8l-i7-VPX";</note>
       </trans-unit>
-      <trans-unit id="Fj6-GE-g4a.text">
+      <trans-unit id="Fgd-lo-l0e.normalTitle" xml:space="preserve">
+        <source>Dark</source>
+        <target>Тёмная</target>
+        <note>Class = "UIButton"; normalTitle = "Dark"; ObjectID = "Fgd-lo-l0e";</note>
+      </trans-unit>
+      <trans-unit id="Fj6-GE-g4a.text" xml:space="preserve">
         <source>Font</source>
         <target>Шрифт</target>
         <note>Class = "UILabel"; text = "Font"; ObjectID = "Fj6-GE-g4a";</note>
       </trans-unit>
-      <trans-unit id="Fq4-H4-gPw.text">
+      <trans-unit id="Fq4-H4-gPw.text" xml:space="preserve">
         <source>Font size</source>
         <target>Размер шрифта</target>
         <note>Class = "UILabel"; text = "Font size"; ObjectID = "Fq4-H4-gPw";</note>
       </trans-unit>
-      <trans-unit id="HSB-cW-Qnv.normalTitle">
+      <trans-unit id="HSB-cW-Qnv.normalTitle" xml:space="preserve">
         <source>Add image</source>
         <target>Добавить изображение</target>
         <note>Class = "UIButton"; normalTitle = "Add image"; ObjectID = "HSB-cW-Qnv";</note>
       </trans-unit>
-      <trans-unit id="KSK-5A-dut.title">
+      <trans-unit id="IsR-iN-T0O.text" xml:space="preserve">
+        <source>This app allows you to read at incredible speeds without almost any training. You now have to do a little initial setup. </source>
+        <target>Это приложение позволяет вам читать на невероятных скоростях без тренировок. Далее вам нужно пройти небольшую начальную настройку</target>
+        <note>Class = "UITextView"; text = "This app allows you to read at incredible speeds without almost any training. You now have to do a little initial setup. "; ObjectID = "IsR-iN-T0O";</note>
+      </trans-unit>
+      <trans-unit id="KSK-5A-dut.title" xml:space="preserve">
         <source>Enable editing</source>
         <target>Включить редактирование</target>
         <note>Class = "UIBarButtonItem"; title = "Enable editing"; ObjectID = "KSK-5A-dut";</note>
       </trans-unit>
-      <trans-unit id="KY1-3w-4dH.text">
+      <trans-unit id="KY1-3w-4dH.text" xml:space="preserve">
         <source>Label</source>
         <target>Label</target>
         <note>Class = "UILabel"; text = "Label"; ObjectID = "KY1-3w-4dH";</note>
       </trans-unit>
-      <trans-unit id="KlO-Ap-uwu.title">
-        <source>––</source>
-        <target>––</target>
-        <note>Class = "UIBarButtonItem"; title = "––"; ObjectID = "KlO-Ap-uwu";</note>
+      <trans-unit id="LOS-YP-HjC.text" xml:space="preserve">
+        <source>Input manually or copy</source>
+        <target>Напечатать вручную или скопировать</target>
+        <note>Class = "UILabel"; text = "Input manually or copy"; ObjectID = "LOS-YP-HjC";</note>
       </trans-unit>
-      <trans-unit id="LTd-lz-Eu6.text">
+      <trans-unit id="LTd-lz-Eu6.text" xml:space="preserve">
         <source>Label</source>
         <target>Label</target>
         <note>Class = "UILabel"; text = "Label"; ObjectID = "LTd-lz-Eu6";</note>
       </trans-unit>
-      <trans-unit id="M2I-zV-g7F.text">
+      <trans-unit id="M2I-zV-g7F.text" xml:space="preserve">
         <source>Default reading speed</source>
         <target>Скорость чтения по-умолчанию</target>
         <note>Class = "UILabel"; text = "Default reading speed"; ObjectID = "M2I-zV-g7F";</note>
       </trans-unit>
-      <trans-unit id="MBc-9Z-4bx.text">
-        <source>Русский</source>
-        <target>Русский</target>
-        <note>Class = "UILabel"; text = "Русский"; ObjectID = "MBc-9Z-4bx";</note>
-      </trans-unit>
-      <trans-unit id="Olv-8Q-uB8.text">
+      <trans-unit id="Olv-8Q-uB8.text" xml:space="preserve">
         <source>Leo Tolstoy</source>
         <target>Лев Николаевич Толстой</target>
         <note>Class = "UITextField"; text = "Leo Tolstoy"; ObjectID = "Olv-8Q-uB8";</note>
       </trans-unit>
-      <trans-unit id="QgA-Zl-TcJ.title">
-        <source>Language picker</source>
-        <target>Выбор языка</target>
-        <note>Class = "UITableViewController"; title = "Language picker"; ObjectID = "QgA-Zl-TcJ";</note>
-      </trans-unit>
-      <trans-unit id="R4o-qQ-cbX.text">
+      <trans-unit id="R4o-qQ-cbX.text" xml:space="preserve">
         <source>Label</source>
         <target>Label</target>
         <note>Class = "UILabel"; text = "Label"; ObjectID = "R4o-qQ-cbX";</note>
       </trans-unit>
-      <trans-unit id="RbN-9J-9zb.title">
+      <trans-unit id="RbN-9J-9zb.title" xml:space="preserve">
         <source>My profile</source>
         <target>Мой профиль</target>
         <note>Class = "UITabBarItem"; title = "My profile"; ObjectID = "RbN-9J-9zb";</note>
       </trans-unit>
-      <trans-unit id="TMw-cD-SAm.normalTitle">
+      <trans-unit id="TMw-cD-SAm.normalTitle" xml:space="preserve">
         <source>Read last 15 words</source>
         <target>Поледние 15 слов</target>
         <note>Class = "UIButton"; normalTitle = "Read last 15 words"; ObjectID = "TMw-cD-SAm";</note>
       </trans-unit>
-      <trans-unit id="Wyf-fa-Puy.title">
+      <trans-unit id="Wyf-fa-Puy.title" xml:space="preserve">
         <source>Settings</source>
         <target>Настройки</target>
         <note>Class = "UINavigationItem"; title = "Settings"; ObjectID = "Wyf-fa-Puy";</note>
       </trans-unit>
-      <trans-unit id="XdN-8K-Xyv.text">
+      <trans-unit id="XdN-8K-Xyv.text" xml:space="preserve">
         <source>Label</source>
         <target>Label</target>
         <note>Class = "UILabel"; text = "Label"; ObjectID = "XdN-8K-Xyv";</note>
       </trans-unit>
-      <trans-unit id="Yuv-UM-ftb.text">
+      <trans-unit id="Y1x-mV-aiS.normalTitle" xml:space="preserve">
+        <source>Done</source>
+        <target>Готово</target>
+        <note>Class = "UIButton"; normalTitle = "Done"; ObjectID = "Y1x-mV-aiS";</note>
+      </trans-unit>
+      <trans-unit id="Yuv-UM-ftb.text" xml:space="preserve">
         <source>Label</source>
         <target>Label</target>
         <note>Class = "UILabel"; text = "Label"; ObjectID = "Yuv-UM-ftb";</note>
       </trans-unit>
-      <trans-unit id="aPt-YN-lw6.normalTitle">
+      <trans-unit id="aPt-YN-lw6.normalTitle" xml:space="preserve">
         <source>Read again</source>
         <target>Читать снова</target>
         <note>Class = "UIButton"; normalTitle = "Read again"; ObjectID = "aPt-YN-lw6";</note>
       </trans-unit>
-      <trans-unit id="bp2-bM-vfj.title">
+      <trans-unit id="b8F-yA-w4V.text" xml:space="preserve">
+        <source>Total words count:</source>
+        <target>Общее количество слов:</target>
+        <note>Class = "UILabel"; text = "Total words count:"; ObjectID = "b8F-yA-w4V";</note>
+      </trans-unit>
+      <trans-unit id="bp2-bM-vfj.title" xml:space="preserve">
         <source>Settings</source>
         <target>Настройки</target>
         <note>Class = "UITabBarItem"; title = "Settings"; ObjectID = "bp2-bM-vfj";</note>
       </trans-unit>
-      <trans-unit id="e4d-Wq-nnT.text">
+      <trans-unit id="d8p-dw-s6s.text" xml:space="preserve">
+        <source>To import from iTunes:  1. Connect your device to the computer 2. Open iTunes 3. Open your device page in iTunes 4. Go to common files and choose Fast Reader 5. Drag and drop your book to common files 6. Open Fast Reader on your phone 7. Go to your Library 8. Pull the list of books down to refresh  Fast Reader supports PDF, TXT, RTF file formats</source>
+        <target>Чтобы импортировать через iTunes:
+        
+        1. Подключите свое устройство к компьютеру
+        2. Откройте iTunes
+        3. Откройте страницу своего устройства в iTunes
+        4. Перейдите в "общие файлы" и выберите Fast Reader
+        5. Перетяните книгу в "общие файлы"
+        6. Откройте Fast Reader на своем телефоне
+        7. Перейдите в библиотеку
+        8. Потяните список книг вниз для обновления
+        
+        Fast Reader поддерживает форматы PDF, TXT, RTF</target>
+        <note>Class = "UITextView"; text = "To import from iTunes:  1. Connect your device to the computer 2. Open iTunes 3. Open your device page in iTunes 4. Go to common files and choose Fast Reader 5. Drag and drop your book to common files 6. Open Fast Reader on your phone 7. Go to your Library 8. Pull the list of books down to refresh  Fast Reader supports PDF, TXT, RTF file formats"; ObjectID = "d8p-dw-s6s";</note>
+      </trans-unit>
+      <trans-unit id="dmp-W9-aLa.text" xml:space="preserve">
+        <source>Font size</source>
+        <target>Размер шрифта</target>
+        <note>Class = "UILabel"; text = "Font size"; ObjectID = "dmp-W9-aLa";</note>
+      </trans-unit>
+      <trans-unit id="e4d-Wq-nnT.text" xml:space="preserve">
         <source>Input your text here...</source>
         <target>Введите свой текст здесь...</target>
         <note>Class = "UITextView"; text = "Input your text here..."; ObjectID = "e4d-Wq-nnT";</note>
       </trans-unit>
-      <trans-unit id="eQ3-u4-XIh.text">
+      <trans-unit id="eQ3-u4-XIh.text" xml:space="preserve">
         <source>Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</source>
         <target>Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</target>
         <note>Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "eQ3-u4-XIh";</note>
       </trans-unit>
-      <trans-unit id="eQg-S2-V6J.title">
-        <source>Text input</source>
-        <target>Ввод текста</target>
-        <note>Class = "UITabBarItem"; title = "Text input"; ObjectID = "eQg-S2-V6J";</note>
+      <trans-unit id="eVG-L6-K49.text" xml:space="preserve">
+        <source>Total time of reading:</source>
+        <target>Общее время чтения</target>
+        <note>Class = "UILabel"; text = "Total time of reading:"; ObjectID = "eVG-L6-K49";</note>
       </trans-unit>
-      <trans-unit id="fHN-zK-7kx.normalTitle">
+      <trans-unit id="ez7-sf-olA.text" xml:space="preserve">
+        <source>Import via iTunes</source>
+        <target>Импортировать через iTunes</target>
+        <note>Class = "UILabel"; text = "Import via iTunes"; ObjectID = "ez7-sf-olA";</note>
+      </trans-unit>
+      <trans-unit id="fHN-zK-7kx.normalTitle" xml:space="preserve">
         <source>Fast Read it!</source>
         <target>Fast Read it!</target>
         <note>Class = "UIButton"; normalTitle = "Fast Read it!"; ObjectID = "fHN-zK-7kx";</note>
       </trans-unit>
-      <trans-unit id="gsh-HP-PFZ.headerTitle">
+      <trans-unit id="g4a-cb-DPA.title" xml:space="preserve">
+        <source>Book Adding</source>
+        <target>Добавление книг</target>
+        <note>Class = "UITabBarItem"; title = "Book Adding"; ObjectID = "g4a-cb-DPA";</note>
+      </trans-unit>
+      <trans-unit id="gsh-HP-PFZ.footerTitle" xml:space="preserve">
+        <source>Theme choosing doesn't work on devices running iOS 13 and above as it is synchronized with systemwide theme.</source>
+        <target>Выбор тем не поддерживается на устройствах с iOS 13 и выше, так как тема синхронизирована с темой системы</target>
+        <note>Class = "UITableViewSection"; footerTitle = "Theme choosing doesn't work on devices running iOS 13 and above as it is synchronized with systemwide theme."; ObjectID = "gsh-HP-PFZ";</note>
+      </trans-unit>
+      <trans-unit id="gsh-HP-PFZ.headerTitle" xml:space="preserve">
         <source>Themes</source>
         <target>Тема</target>
         <note>Class = "UITableViewSection"; headerTitle = "Themes"; ObjectID = "gsh-HP-PFZ";</note>
       </trans-unit>
-      <trans-unit id="hu7-5h-7t8.title">
+      <trans-unit id="hu7-5h-7t8.title" xml:space="preserve">
         <source>Library</source>
         <target>Библиотека</target>
         <note>Class = "UINavigationItem"; title = "Library"; ObjectID = "hu7-5h-7t8";</note>
       </trans-unit>
-      <trans-unit id="jap-UC-Sxa.title">
+      <trans-unit id="j0g-Rb-EmZ.title" xml:space="preserve">
+        <source>Importing method</source>
+        <target>Метод импорта</target>
+        <note>Class = "UINavigationItem"; title = "Importing method"; ObjectID = "j0g-Rb-EmZ";</note>
+      </trans-unit>
+      <trans-unit id="jap-UC-Sxa.title" xml:space="preserve">
         <source>Text input</source>
         <target>Ввод текста</target>
         <note>Class = "UINavigationItem"; title = "Text input"; ObjectID = "jap-UC-Sxa";</note>
       </trans-unit>
-      <trans-unit id="kmN-9F-GFX.text">
+      <trans-unit id="kmN-9F-GFX.text" xml:space="preserve">
         <source>Label</source>
         <target>Label</target>
         <note>Class = "UILabel"; text = "Label"; ObjectID = "kmN-9F-GFX";</note>
       </trans-unit>
-      <trans-unit id="npi-Od-jji.text">
+      <trans-unit id="lWT-Gt-oHR.text" xml:space="preserve">
+        <source>Time economy:</source>
+        <target>Экономия времени</target>
+        <note>Class = "UILabel"; text = "Time economy:"; ObjectID = "lWT-Gt-oHR";</note>
+      </trans-unit>
+      <trans-unit id="mto-Wk-PDg.text" xml:space="preserve">
+        <source>Welcome to Fast Reader</source>
+        <target>Добро пожаловать в Fast Reader</target>
+        <note>Class = "UILabel"; text = "Welcome to Fast Reader"; ObjectID = "mto-Wk-PDg";</note>
+      </trans-unit>
+      <trans-unit id="npi-Od-jji.text" xml:space="preserve">
         <source>Read today:</source>
         <target>Прочитано сегодня:</target>
         <note>Class = "UILabel"; text = "Read today:"; ObjectID = "npi-Od-jji";</note>
       </trans-unit>
-      <trans-unit id="pmD-tO-93Q.title">
+      <trans-unit id="pmD-tO-93Q.title" xml:space="preserve">
         <source>Library</source>
         <target>Библиотека</target>
         <note>Class = "UITabBarItem"; title = "Library"; ObjectID = "pmD-tO-93Q";</note>
       </trans-unit>
-      <trans-unit id="tQL-c3-Tql.title">
+      <trans-unit id="rY8-aX-QXi.title" xml:space="preserve">
+        <source>Book detail</source>
+        <target>Подробности о книге</target>
+        <note>Class = "UIViewController"; title = "Book detail"; ObjectID = "rY8-aX-QXi";</note>
+      </trans-unit>
+      <trans-unit id="tQL-c3-Tql.title" xml:space="preserve">
         <source>Fastreading</source>
         <target>Скорочтение</target>
         <note>Class = "UIViewController"; title = "Fastreading"; ObjectID = "tQL-c3-Tql";</note>
       </trans-unit>
-      <trans-unit id="woT-Jx-Asa.title">
+      <trans-unit id="woT-Jx-Asa.title" xml:space="preserve">
         <source>Theme picker</source>
         <target>Выбор темы</target>
         <note>Class = "UITableViewController"; title = "Theme picker"; ObjectID = "woT-Jx-Asa";</note>
+      </trans-unit>
+      <trans-unit id="xjZ-nz-7oP.normalTitle" xml:space="preserve">
+        <source>Light</source>
+        <target>Светлая</target>
+        <note>Class = "UIButton"; normalTitle = "Light"; ObjectID = "xjZ-nz-7oP";</note>
+      </trans-unit>
+      <trans-unit id="xww-FL-31J.text" xml:space="preserve">
+        <source>Import from webage</source>
+        <target>Импортировать из веб-страницы</target>
+        <note>Class = "UILabel"; text = "Import from webage"; ObjectID = "xww-FL-31J";</note>
       </trans-unit>
     </body>
   </file>
   <file original="Fast Reader/en.lproj/InfoPlist.strings" datatype="plaintext" source-language="en" target-language="ru">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="10.3" build-num="10G8"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="11.2" build-num="11B52"/>
     </header>
     <body>
-      <trans-unit id="CFBundleName">
+      <trans-unit id="CFBundleName" xml:space="preserve">
         <source>Fast Reader</source>
         <note>Bundle name</note>
       </trans-unit>
@@ -244,113 +330,176 @@
   </file>
   <file original="Fast Reader/en.lproj/Localizable.strings" source-language="en" target-language="ru" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="10.3" build-num="10G8"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="11.2" build-num="11B52"/>
     </header>
     <body>
-      <trans-unit id="Author's name">
+      <trans-unit id=" minutes" xml:space="preserve">
+        <source> minutes</source>
+        <target> минут</target>
+        <note>part 2 of timeEconomyLabel</note>
+      </trans-unit>
+      <trans-unit id=" words" xml:space="preserve">
+        <source> words</source>
+        <target> слов</target>
+        <note>part 2 of todayLabel</note>
+      </trans-unit>
+      <trans-unit id=" words/min" xml:space="preserve">
+        <source> words/min</source>
+        <target> слов/мин</target>
+        <note>words per minute</note>
+      </trans-unit>
+      <trans-unit id="An error occured while fetching text from website. Please, try again." xml:space="preserve">
+        <source>An error occured while fetching text from website. Please, try again.</source>
+        <target>Возникла ошибка при получении текста с сайта. Пожалуйста, попробуйте еще раз.</target>
+        <note>Alert message</note>
+      </trans-unit>
+      <trans-unit id="Author's name" xml:space="preserve">
         <source>Author's name</source>
         <target>Имя автора</target>
         <note>Author placeholder</note>
       </trans-unit>
-      <trans-unit id="Average reading speed">
+      <trans-unit id="Average reading speed" xml:space="preserve">
         <source>Average reading speed</source>
         <target>Средняя скорость чтения</target>
         <note>Reading speed chart name</note>
       </trans-unit>
-      <trans-unit id="Cancel">
+      <trans-unit id="Cancel" xml:space="preserve">
         <source>Cancel</source>
         <target>Отменить</target>
-        <note>Cancel alert action</note>
+        <note>alert action button
+   Cancel alert action</note>
       </trans-unit>
-      <trans-unit id="Disable editing">
+      <trans-unit id="Disable editing" xml:space="preserve">
         <source>Disable editing</source>
         <target>Отключить редактирование</target>
         <note>editButtonTitle</note>
       </trans-unit>
-      <trans-unit id="Enable editing">
+      <trans-unit id="Enable editing" xml:space="preserve">
         <source>Enable editing</source>
         <target>Включить редактирование</target>
         <note>editButtonTitle</note>
       </trans-unit>
-      <trans-unit id="End of text">
+      <trans-unit id="End of text" xml:space="preserve">
         <source>End of text</source>
         <target>Конец текста</target>
         <note>Localized message shown after end of text</note>
       </trans-unit>
-      <trans-unit id="Error">
+      <trans-unit id="Error" xml:space="preserve">
         <source>Error</source>
         <target>Ошибка</target>
-        <note>localized alert title</note>
+        <note>Alert title
+   alert title
+   localized alert title</note>
       </trans-unit>
-      <trans-unit id="Fast Read it!">
+      <trans-unit id="Fast Read it!" xml:space="preserve">
         <source>Fast Read it!</source>
         <target>Fast Read it!</target>
         <note>Bottom Button</note>
       </trans-unit>
-      <trans-unit id="Input name and author of the book">
+      <trans-unit id="Font size: " xml:space="preserve">
+        <source>Font size: </source>
+        <target>Размер шрифта: </target>
+        <note>Font size label</note>
+      </trans-unit>
+      <trans-unit id="Go" xml:space="preserve">
+        <source>Go</source>
+        <target>Перейти</target>
+        <note>alert action button</note>
+      </trans-unit>
+      <trans-unit id="Input name and author of the book" xml:space="preserve">
         <source>Input name and author of the book</source>
         <target>Введите название книги и имя автора</target>
         <note>Alert message</note>
       </trans-unit>
-      <trans-unit id="Input your text here...">
+      <trans-unit id="Input your text here..." xml:space="preserve">
         <source>Input your text here...</source>
         <target>Введите свой текст здесь...</target>
         <note>default inputTextView text</note>
       </trans-unit>
-      <trans-unit id="Name of the book">
+      <trans-unit id="Max reading speed: " xml:space="preserve">
+        <source>Max reading speed: </source>
+        <target>Максимальная скорость чтения: </target>
+        <note>maxSpeedLabel text</note>
+      </trans-unit>
+      <trans-unit id="Name of the book" xml:space="preserve">
         <source>Name of the book</source>
-        <target>Имя книги</target>
+        <target>Название книги</target>
         <note>Name of book placeholder</note>
       </trans-unit>
-      <trans-unit id="Not enough information yet">
+      <trans-unit id="Not enough information yet" xml:space="preserve">
         <source>Not enough information yet</source>
         <target>Пока недостаточно информации</target>
         <note>Empty chart message</note>
       </trans-unit>
-      <trans-unit id="Read today: (todayStat.wordsCount)">
-        <source>Read today: (todayStat.wordsCount)</source>
-        <target>Прочитано сегодня: (todayStat.wordsCount)</target>
+      <trans-unit id="Read today: " xml:space="preserve">
+        <source>Read today: </source>
+        <target>Прочитано сегодня: </target>
         <note>readTodayLabel text</note>
       </trans-unit>
-      <trans-unit id="Read: (Int((position/wordsCount)*100.0))%">
-        <source>Read: (Int((position/wordsCount)*100.0))%</source>
-        <target>Прочитано: (Int((position/wordsCount)*100.0))%</target>
-        <note>Percentage label</note>
+      <trans-unit id="Read: " xml:space="preserve">
+        <source>Read: </source>
+        <target>Прочитано: </target>
+        <note>Percentage label
+   percentage label</note>
       </trans-unit>
-      <trans-unit id="Read: (Int((position/wordsCount)*100.0))% Remaining: (Int((wordsCount - position) / readingSpeed)) min">
+      <trans-unit id="Read: (Int((position/wordsCount)*100.0))% Remaining: (Int((wordsCount - position) / readingSpeed)) min" xml:space="preserve">
         <source>Read: (Int((position/wordsCount)*100.0))% Remaining: (Int((wordsCount - position) / readingSpeed)) min</source>
-        <target>>Прочитано: (Int((position/wordsCount)*100.0))% Осталось: (Int((wordsCount - position) / readingSpeed)) мин</target>
+        <target>&gt;Прочитано: (Int((position/wordsCount)*100.0))% Осталось: (Int((wordsCount - position) / readingSpeed)) мин</target>
         <note>Percentage label</note>
       </trans-unit>
-      <trans-unit id="Save">
+      <trans-unit id="Remaining: " xml:space="preserve">
+        <source>Remaining: </source>
+        <target>Осталось: </target>
+        <note>percentage label</note>
+      </trans-unit>
+      <trans-unit id="Save" xml:space="preserve">
         <source>Save</source>
         <target>Сохранить</target>
         <note>Save button title</note>
       </trans-unit>
-      <trans-unit id="Save as...">
+      <trans-unit id="Save as..." xml:space="preserve">
         <source>Save as...</source>
         <target>Сохранить как...</target>
         <note>Alert title</note>
       </trans-unit>
-      <trans-unit id="Unknown author">
+      <trans-unit id="This is example text" xml:space="preserve">
+        <source>This is example text</source>
+        <target>Так будет выглядеть текст</target>
+        <note>Example text</note>
+      </trans-unit>
+      <trans-unit id="Time economy: " xml:space="preserve">
+        <source>Time economy: </source>
+        <target>Экономия времени: </target>
+        <note>timeEconomyLabel text</note>
+      </trans-unit>
+      <trans-unit id="Total time of reading: " xml:space="preserve">
+        <source>Total time of reading: </source>
+        <target>Общее время чтения</target>
+        <note>timeOfReadingLabel text</note>
+      </trans-unit>
+      <trans-unit id="Total words count: " xml:space="preserve">
+        <source>Total words count: </source>
+        <target>Общее количество слов: </target>
+        <note>wordsCountLabel text</note>
+      </trans-unit>
+      <trans-unit id="Unknown author" xml:space="preserve">
         <source>Unknown author</source>
         <target>Неизвестный автор</target>
         <note>Unknown author</note>
       </trans-unit>
-      <trans-unit id="Unknown book">
+      <trans-unit id="Unknown book" xml:space="preserve">
         <source>Unknown book</source>
         <target>Неизвестная книга</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Unknown name">
-        <source>Unknown name</source>
-        <target>Неизвестное название</target>
-        <note>Unknown name</note>
-      </trans-unit>
-      <trans-unit id="You didn't input any text">
+      <trans-unit id="You didn't input any text" xml:space="preserve">
         <source>You didn't input any text</source>
         <target>Вы не ввели текст</target>
         <note>localized alert message</note>
+      </trans-unit>
+      <trans-unit id="min" xml:space="preserve">
+        <source>min</source>
+        <note>minutes</note>
       </trans-unit>
     </body>
   </file>

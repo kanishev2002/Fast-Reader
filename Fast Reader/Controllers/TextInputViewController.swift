@@ -1,5 +1,5 @@
 //
-//  FastReaderViewController.swift
+//  TextInputViewController.swift
 //  Fast Reader
 //
 //  Created by Илья Канищев on 27/12/2018.
@@ -8,10 +8,14 @@
 
 import UIKit
 
-class FastReaderViewController: UIViewController {
+class TextInputViewController: UIViewController {
+    // MARK: - IBOutlets
     
     @IBOutlet weak var readItButton: UIButton!
     @IBOutlet weak var inputTextView: UITextView!
+    
+    // MARK: - Constants
+    
     let localizedDefaultText = NSLocalizedString("Input your text here...", comment: "default inputTextView text")
     let dataController = DataController.shared
     
@@ -29,18 +33,12 @@ class FastReaderViewController: UIViewController {
         }
     }
     
+    // MARK: - Managing views
     
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(toggleDarkMode), name: .darkModeEnabled, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(toggleLightMode), name: .darkModeDisabled, object: nil)
-        
-        
-        // debug:
-        /*dataController.deleteAllEntries()
-        print("Stats cleared: \(DataController.shared.getStats().count) stats found")
-         */
-        //
         
         let saveButtonTitle = NSLocalizedString("Save", comment: "Save button title")
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: saveButtonTitle, style: .plain, target: self, action: #selector(saveButtonTouched))
@@ -48,17 +46,16 @@ class FastReaderViewController: UIViewController {
         inputTextView.text = localizedDefaultText
         let locallizedButton = NSLocalizedString("Fast Read it!", comment: "Bottom Button")
         readItButton.setTitle(locallizedButton, for: .normal)
-        /*if let theme = UserDefaults.standard.string(forKey: "Theme") {
+        if let theme = UserDefaults.standard.string(forKey: "Theme") {
             if theme == "Dark" {
-                view.backgroundColor = .black
-                inputTextView.textColor = .white
-                inputTextView.backgroundColor = .black
+                toggleDarkMode()
                 NotificationCenter.default.post(Notification(name: .darkModeEnabled))
             }
         }
         else {
+            toggleLightMode()
             NotificationCenter.default.post(Notification(name: .darkModeDisabled))
-        }*/
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -66,6 +63,8 @@ class FastReaderViewController: UIViewController {
         inputTextView.resignFirstResponder()
         inputTextView.text = localizedDefaultText
     }
+    
+    // MARK: - @Objc functions
     
     @objc func saveButtonTouched() {
         guard inputTextView.text != localizedDefaultText && !inputTextView.text.isEmpty else {
@@ -98,7 +97,7 @@ class FastReaderViewController: UIViewController {
                 return
             }
             
-            self.dataController.saveBook(named: name, withText: self.inputTextView!.text.components(separatedBy: .whitespacesAndNewlines), by: author, withPosition: 0)
+            self.dataController.saveBook(named: name, withText: self.inputTextView!.text, by: author, withPosition: 0)
         })
         alertController.addAction(okAction)
         
@@ -108,6 +107,8 @@ class FastReaderViewController: UIViewController {
         print("saveAsBook function completed")
     }
     
+    // MARK: - Navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "Fastreading button was pressed"
         {
@@ -115,26 +116,21 @@ class FastReaderViewController: UIViewController {
             {
                 destinationVC.savedBook = nil
                 destinationVC.text = inputTextView.text.components(separatedBy: .whitespacesAndNewlines).filter{!$0.isEmpty && $0 != " "}
-                destinationVC.didComeFromBookDetails = false
+                destinationVC.bookIsSaved = false
                 destinationVC.position = 0
             }
         }
     }
 }
 
-extension FastReaderViewController: UITextViewDelegate {
+// MARK: - Text view delegate
+
+extension TextInputViewController: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
         inputTextView.becomeFirstResponder()
         if inputTextView.text == localizedDefaultText {
             inputTextView.text = ""
         }
-        
-        /*if let theme = UserDefaults.standard.string(forKey: "Theme"), theme == "Dark"{
-            inputTextView.textColor = .white
-        }
-        else {
-            inputTextView.textColor = .black
-        }*/
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
@@ -154,35 +150,41 @@ extension FastReaderViewController: UITextViewDelegate {
     }
 }
 
-extension FastReaderViewController: DarkModeApplicable {
+// MARK: - Dark mode
+
+extension TextInputViewController: DarkModeApplicable {
     func toggleDarkMode() {
-        let tintColor = #colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1)
-        view.backgroundColor = .black
-        inputTextView.textColor = .white
-        inputTextView.backgroundColor = .black
-        inputTextView.tintColor = .white
-        tabBarController?.tabBar.barTintColor = .black
-        tabBarController?.tabBar.tintColor = tintColor
-        navigationController?.navigationBar.barTintColor = .black
-        navigationController?.navigationBar.tintColor = tintColor
-        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.white]
+        if let version = Int(String(systemVersion)), version<13 {
+            let tintColor = #colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1)
+            view.backgroundColor = .black
+            inputTextView.textColor = .white
+            inputTextView.backgroundColor = .black
+            inputTextView.tintColor = .white
+            tabBarController?.tabBar.barTintColor = .black
+            tabBarController?.tabBar.tintColor = tintColor
+            navigationController?.navigationBar.barTintColor = .black
+            navigationController?.navigationBar.tintColor = tintColor
+            navigationController?.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.white]
+        }
     }
     
     func toggleLightMode() {
-        view.backgroundColor = .white
-        if inputTextView.text == localizedDefaultText {
-            inputTextView.textColor = .lightGray
+        if let version = Int(String(systemVersion)), version<13 {
+            view.backgroundColor = .white
+            if inputTextView.text == localizedDefaultText {
+                inputTextView.textColor = .lightGray
+            }
+            else {
+                inputTextView.textColor = .black
+            }
+            inputTextView.backgroundColor = .white
+            inputTextView.tintColor = systemButtonColor
+            tabBarController?.tabBar.barTintColor = .white
+            tabBarController?.tabBar.tintColor = systemButtonColor
+            navigationController?.navigationBar.barTintColor = .white
+            navigationController?.navigationBar.tintColor = systemButtonColor
+            navigationController?.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.black]
         }
-        else {
-            inputTextView.textColor = .black
-        }
-        inputTextView.backgroundColor = .white
-        inputTextView.tintColor = UIButton(type: .system).tintColor
-        tabBarController?.tabBar.barTintColor = .white
-        tabBarController?.tabBar.tintColor = UIButton(type: .system).tintColor
-        navigationController?.navigationBar.barTintColor = .white
-        navigationController?.navigationBar.tintColor = .black
-        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.black]
     }
 }
 

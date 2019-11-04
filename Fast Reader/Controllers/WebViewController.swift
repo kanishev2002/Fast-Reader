@@ -10,33 +10,27 @@ import UIKit
 import WebKit
 
 class WebViewController: UIViewController, WKNavigationDelegate {
-    //var webView: WKWebView!
     
     @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var progressView: UIProgressView!
     
-    /*override func loadView() {
-        webView = WKWebView()
-        webView.navigationDelegate = self
-        view = webView
-        view.translatesAutoresizingMaskIntoConstraints = false
-    }*/
+    // MARK: - Managing views
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         configureToolbar()
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(toggleDarkMode), name: .darkModeEnabled, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(toggleLightMode), name: .darkModeDisabled, object: nil)
-        /*if let theme = UserDefaults.standard.string(forKey: "Theme"), theme == "Dark" {
+        if let theme = UserDefaults.standard.string(forKey: "Theme"), theme == "Dark" {
             toggleDarkMode()
         }
         else {
             toggleLightMode()
-        }*/
+        }
         webView.allowsBackForwardNavigationGestures = true
         let url = URL(string: "https://google.com")!
         webView.load(URLRequest(url: url))
@@ -57,6 +51,8 @@ class WebViewController: UIViewController, WKNavigationDelegate {
             progressView.setProgress(Float(webView.estimatedProgress), animated: true)
         }
     }
+    
+    // MARK: - Functions
     
     func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
         let localizedError = NSLocalizedString("Error", comment: "alert title")
@@ -124,37 +120,42 @@ class WebViewController: UIViewController, WKNavigationDelegate {
                 if let senderString = sender as? String {
                     print(senderString)
                     destinationVC.savedBook = nil
-                    destinationVC.didComeFromBookDetails = false
+                    destinationVC.bookIsSaved = false
                     destinationVC.text = senderString.components(separatedBy: .whitespacesAndNewlines).filter{!$0.isEmpty && $0 != " "}
                     destinationVC.position = 0
                 }
             }
         }
     }
-
+    
 }
+
+// MARK: - Dark mode
 
 extension WebViewController: DarkModeApplicable{
     func toggleDarkMode() {
-        navigationController?.toolbar.tintColor = #colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1)
-        navigationController?.toolbar.barTintColor = .black
-        //navigationController?.toolbar.backgroundColor = .black
-        view.backgroundColor = .black
-        tabBarController?.tabBar.barTintColor = .black
-        tabBarController?.tabBar.tintColor = #colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1)
-        navigationController?.navigationBar.barTintColor = .black
-        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.white]
+        if let version = Int(String(systemVersion)), version<13 {
+            navigationController?.toolbar.tintColor = #colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1)
+            navigationController?.toolbar.barTintColor = .black
+            view.backgroundColor = .black
+            tabBarController?.tabBar.barTintColor = .black
+            tabBarController?.tabBar.tintColor = #colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1)
+            navigationController?.navigationBar.barTintColor = .black
+            navigationController?.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.white]
+        }
     }
     
     func toggleLightMode() {
-        navigationController?.toolbar.tintColor = UIButton(type: .system).tintColor
-        navigationController?.toolbar.barTintColor = .white
-        //navigationController?.toolbar.backgroundColor = .white
-        view.backgroundColor = .white
-        tabBarController?.tabBar.barTintColor = .white
-        tabBarController?.tabBar.tintColor = UIButton(type: .system).tintColor
-        navigationController?.navigationBar.barTintColor = .white
-        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.black]
+        if let version = Int(String(systemVersion)), version<13 {
+            navigationController?.toolbar.tintColor = systemButtonColor
+            navigationController?.toolbar.barTintColor = .white
+            view.backgroundColor = .white
+            tabBarController?.tabBar.barTintColor = .white
+            tabBarController?.tabBar.tintColor = systemButtonColor
+            navigationController?.navigationBar.barTintColor = .white
+            navigationController?.navigationBar.tintColor = systemButtonColor
+            navigationController?.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.black]
+        }
     }
     
     

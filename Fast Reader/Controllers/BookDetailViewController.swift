@@ -10,7 +10,7 @@ import UIKit
 
 class BookDetailViewController: UIViewController {
     
-    
+    // MARK: - Outlets
     @IBOutlet weak var addImageButton: UIButton!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var authorTextField: UITextField!
@@ -20,6 +20,7 @@ class BookDetailViewController: UIViewController {
     @IBOutlet weak var fastReadItButton: UIButton!
     @IBOutlet weak var percentageLabel: UILabel!
     
+    // MARK: - IBActions
     
     @IBAction func editButtonTouched(_ sender: UIBarButtonItem) {
         changeEditingMode()
@@ -31,34 +32,32 @@ class BookDetailViewController: UIViewController {
         navigationController?.present(pickerController, animated: true, completion: nil)
     }
     
+    // MARK: - Variables
     
     var book: Book?
     var keyboardHeight: CGFloat?
     var editModeEnabled = false
+    var pickerController = UIImagePickerController()
     
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        /*if let book = book {
+        if let book = book {
             let position = Double(book.position)
             let wordsCount = Double(book.text!.count)
-            let localizedPercentageLabel = NSLocalizedString("Read: \(Int((position/wordsCount)*100.0))%", comment: "Percentage label")
+            let localizedPercentageLabel = NSLocalizedString("Read: ", comment: "Percentage label") + "\(Int((position/wordsCount)*100.0))%"
             percentageLabel.text = localizedPercentageLabel
         }
-        if let theme = UserDefaults.standard.string(forKey: "Theme"), theme == "Dark" {
-            toggleDarkMode()
-        }
-        else {
-            toggleLightMode()
-        }*/
     }
-
+    
+    // MARK: - Managing Views
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
         textView.delegate = self
         nameTextField.delegate = self
         authorTextField.delegate = self
+        pickerController.delegate = self
         addImageButton.isHidden = true
         navigationItem.setHidesBackButton(false, animated: true)
         authorTextField.isUserInteractionEnabled = false
@@ -77,11 +76,18 @@ class BookDetailViewController: UIViewController {
             else {
                 addImageButton.isHidden = false
             }
-            textView.text = book.text?.joined(separator: " ")
+            textView.text = book.text
         }
         else {
             print("BookDetailViewController didn't get book")
             fastReadItButton.isEnabled = false
+        }
+        
+        if let theme = UserDefaults.standard.string(forKey: "Theme"), theme == "Dark" {
+            toggleDarkMode()
+        }
+        else {
+            toggleLightMode()
         }
         
         let tapGR = UITapGestureRecognizer(target: self, action: #selector(imageViewWasTouched))
@@ -93,19 +99,11 @@ class BookDetailViewController: UIViewController {
         if editModeEnabled {
             changeEditingMode()
         }
-        /*if let book = book {
-            book.text = textView.text.components(separatedBy: .whitespacesAndNewlines).filter{!$0.isEmpty && $0 != " "}
-            book.image = bookImageView.image?.pngData()
-        }
-        DataController.shared.saveData()*/
-        //NotificationCenter.default.post(Notification(name: Notification.Name("libraryShouldUpdate")))
-        //NotificationCenter.default.post(name: Notification.Name("libraryShouldUpdate"), object: nil, userInfo: ["name" : nameTextField.text!])
     }
     
+    // MARK: - @Objc functions
     
     @objc func imageViewWasTouched() {
-        let pickerController = UIImagePickerController()
-        pickerController.delegate = self
         navigationController?.present(pickerController, animated: true, completion: nil)
     }
     
@@ -117,15 +115,12 @@ class BookDetailViewController: UIViewController {
     }
     
     @objc func keyboardWillShow(_ notification: Notification) {
-        //print("keyboardWillShow was called")
         guard keyboardHeight == nil else {
             return
         }
-        //print("Keyboard was shown")
         if let keyboardRect = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             keyboardHeight = keyboardRect.height
             NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
-            //print("Keyboard height is \(keyboardHeight!)")
         }
         else {
             print("Error in keyboardWillShow")
@@ -141,6 +136,8 @@ class BookDetailViewController: UIViewController {
             print("Error in keyboardWillHide")
         }
     }
+    
+    // MARK: - Functions
     
     func changeEditingMode() {
         if !editModeEnabled {
@@ -166,34 +163,31 @@ class BookDetailViewController: UIViewController {
             nameTextField.isUserInteractionEnabled = false
             editModeEnabled = false
             DataController.shared.saveData()
-            //NotificationCenter.default.post(Notification(name: Notification.Name("libraryShouldUpdate")))
             NotificationCenter.default.post(name: Notification.Name("libraryShouldUpdate"), object: nil, userInfo: ["name" : nameTextField.text!])
         }
         let disableLocalized = NSLocalizedString("Disable editing", comment: "editButtonTitle")
         let enableLocalized = NSLocalizedString("Enable editing", comment: "editButtonTitle")
         editButton.title = editModeEnabled ? disableLocalized : enableLocalized
     }
-
+    
     
     // MARK: - Navigation
-
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "BookDetailToFastreadingInterface" {
             if let destinationVC = segue.destination as? FastReadingInterfaceViewController {
-                if let book = book {
-                    book.text = textView.text.components(separatedBy: .whitespacesAndNewlines).filter{!$0.isEmpty && $0 != " "}
-                    book.image = bookImageView.image?.pngData()
-                }
                 DataController.shared.saveData()
                 destinationVC.savedBook = book
-                destinationVC.didComeFromBookDetails = true
-                destinationVC.text = book!.text
+                destinationVC.bookIsSaved = true
+                destinationVC.text = book!.separatedText
                 destinationVC.position = Int(book!.position)
             }
         }
     }
-
+    
 }
+
+// MARK: - UIImagePickerControllerDelegate
 
 extension BookDetailViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -210,6 +204,8 @@ extension BookDetailViewController: UINavigationControllerDelegate, UIImagePicke
         picker.dismiss(animated: true, completion: nil)
     }
 }
+
+// MARK: - UITextView and UITextField delegates
 
 extension BookDetailViewController: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
@@ -235,7 +231,8 @@ extension BookDetailViewController: UITextViewDelegate {
     func textViewDidEndEditing(_ textView: UITextView) {
         textView.resignFirstResponder()
         if let book = book {
-            book.text = textView.text.components(separatedBy: .whitespacesAndNewlines).filter{!$0.isEmpty && $0 != " "}
+            book.text = textView.text
+            book.separatedText = textView.text.components(separatedBy: .whitespacesAndNewlines).filter{!$0.isEmpty && $0 != " "}
         }
         DataController.shared.saveData()
     }
@@ -251,29 +248,33 @@ extension BookDetailViewController: UITextFieldDelegate {
     }
 }
 
+// MARK: - Dark Mode
+
 extension BookDetailViewController: DarkModeApplicable {
     func toggleLightMode() {
-        view.backgroundColor = .white
-        navigationController?.navigationBar.barTintColor = .white
-        navigationController?.navigationBar.tintColor = UIButton(type: .system).tintColor
-        navigationController?.navigationBar.isTranslucent = true
-        nameTextField.textColor = .black
-        authorTextField.textColor = .black
-        textView.backgroundColor = .white
-        textView.textColor = .black
-        percentageLabel.textColor = .black
+        if let version = Int(String(systemVersion)), version<13 {
+            view.backgroundColor = .white
+            navigationController?.navigationBar.barTintColor = .white
+            navigationController?.navigationBar.tintColor = systemButtonColor
+            nameTextField.textColor = .black
+            authorTextField.textColor = .black
+            textView.backgroundColor = .white
+            textView.textColor = .black
+            percentageLabel.textColor = .black
+        }
     }
     
     func toggleDarkMode() {
-        let tintColor = #colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1)
-        view.backgroundColor = .black
-        navigationController?.navigationBar.barTintColor = .black
-        navigationController?.navigationBar.tintColor = tintColor
-        navigationController?.navigationBar.isTranslucent = false
-        nameTextField.textColor = .white
-        authorTextField.textColor = .white
-        textView.backgroundColor = .black
-        textView.textColor = .white
-        percentageLabel.textColor = .white
+        if let version = Int(String(systemVersion)), version<13 {
+            let tintColor = #colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1)
+            view.backgroundColor = .black
+            navigationController?.navigationBar.barTintColor = .black
+            navigationController?.navigationBar.tintColor = tintColor
+            nameTextField.textColor = .white
+            authorTextField.textColor = .white
+            textView.backgroundColor = .black
+            textView.textColor = .white
+            percentageLabel.textColor = .white
+        }
     }
 }
